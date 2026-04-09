@@ -73,7 +73,7 @@ export default function Home() {
             />
           </div>
           <div className="hero__focus">
-            <h2>Current focus</h2>
+            <h2>Currently exploring</h2>
             <ul>
               {profile.currentFocus.map((item) => (
                 <li key={item}>{item}</li>
@@ -85,9 +85,9 @@ export default function Home() {
 
       <section className="section">
         <SectionHeading
-          description="A curated set of projects that best represent how I think, what I build, and the questions I keep returning to."
+          description="A few projects that best capture the kinds of problems I like to work on."
           eyebrow="Selected work"
-          title="Projects where ideas and systems meet."
+          title="Selected work."
         />
         <div className="grid projects-grid">
           {featuredProjects.map((project, index) => (
@@ -100,9 +100,9 @@ export default function Home() {
 
       <section className="section">
         <SectionHeading
-          description="The themes that keep pulling my attention back, whether the work looks like engineering, research, or something in between."
+          description="The ideas I keep circling back to, whether the work looks more like engineering or research."
           eyebrow="Interests"
-          title="What I keep thinking about."
+          title="Research interests."
         />
         <div className="interest-layout">
           <Reveal className="interest-panel" delay={40}>
@@ -118,9 +118,8 @@ export default function Home() {
           <Reveal className="interest-panel" delay={110}>
             <p>
               I am most interested in intelligent systems that remain legible
-              under real constraints. That includes how they reason, how they
-              store and recover state, how they earn trust, and how ideas change
-              when they leave a notebook and meet the world.
+              under real constraints, especially around reasoning, memory,
+              representation, and trust.
             </p>
           </Reveal>
         </div>
@@ -128,9 +127,9 @@ export default function Home() {
 
       <section className="section">
         <SectionHeading
-          description="A compressed view of the environments where I have spent most of my time: production ML, technical leadership, and systems that do not get to fail gracefully."
+          description="Production AI, technical leadership, and systems built under hard constraints."
           eyebrow="Experience"
-          title="A short timeline."
+          title="Experience."
         />
         <div className="timeline">
           {experience.map((item, index) => (
@@ -159,9 +158,9 @@ export default function Home() {
 
       <section className="section">
         <SectionHeading
-          description="The part of the website that should feel the most personal: not a manifesto, just the habits of mind I keep returning to."
+          description="A few principles that shape how I think about building and research."
           eyebrow="Philosophy"
-          title="How I like to work."
+          title="Working principles."
         />
         <div className="philosophy-layout">
           <Reveal delay={50}>
@@ -177,10 +176,9 @@ export default function Home() {
           <Reveal className="philosophy-callout" delay={120}>
             <blockquote>{profile.epigraph}</blockquote>
             <p>
-              I like the loop between inquiry and implementation. Good ideas
-              become more precise when they have to survive contact with code,
-              interfaces, data, and time. Good engineering gets better when it
-              stays close to first principles.
+              I like the loop between inquiry and implementation. Ideas become
+              more precise when they survive contact with code, interfaces,
+              data, and time.
             </p>
           </Reveal>
         </div>
@@ -188,9 +186,9 @@ export default function Home() {
 
       <section className="section">
         <SectionHeading
-          description="A simple, site-owned record of launches, milestones, and ongoing work. This is where future updates can be added without changing the overall design."
+          description="Recent public launches, milestones, and repository updates."
           eyebrow="Updates"
-          title="Recent signals."
+          title="Recent updates."
         />
         <div className="updates-grid">
           {featuredUpdates.map((update, index) => (
@@ -203,17 +201,16 @@ export default function Home() {
 
       <section className="section">
         <SectionHeading
-          description="The website is intentionally lightweight to maintain. Projects, updates, profile changes, and resume edits can all be made from structured content files."
-          eyebrow="Contact"
-          title="Elsewhere on the internet."
+          description="The projects and repositories are the best place to start. The links below are the easiest way to reach me or follow current work."
+          eyebrow="Links"
+          title="Contact."
         />
         <div className="contact-layout">
           <Reveal className="contact-card" delay={50}>
             <h2 className="contact-card__title">Reach out or follow along</h2>
             <p>
-              The fastest way to understand what I am working on is through the
-              projects and updates here, then the repositories and social links
-              behind them.
+              Email is the easiest way to reach me. You can also find current
+              public work through GitHub, LinkedIn, X, and Instagram.
             </p>
             <div className="contact-card__actions">
               <a className="button" href={`mailto:${profile.email}`}>
@@ -226,6 +223,14 @@ export default function Home() {
                 target="_blank"
               >
                 Resume PDF
+              </a>
+              <a
+                className="ghost-button"
+                href={profile.socialLinks[0].href}
+                rel="noreferrer"
+                target="_blank"
+              >
+                GitHub
               </a>
             </div>
           </Reveal>

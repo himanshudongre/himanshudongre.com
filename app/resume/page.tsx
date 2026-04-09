@@ -16,11 +16,10 @@ export default function ResumePage() {
     <>
       <section className="page-hero">
         <span className="eyebrow">Resume</span>
-        <h1 className="page-title">A web version of the essentials.</h1>
+        <h1 className="page-title">Resume.</h1>
         <p className="page-copy">
-          A concise, public-facing summary of my background. The downloadable PDF
-          remains available for formal use, while this page keeps the narrative
-          a little more readable on the web.
+          Experience, education, and technical focus. The PDF version is
+          available for formal use.
         </p>
         <div className="resume-actions">
           <a

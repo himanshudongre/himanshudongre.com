@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import { ProjectCard } from "@/components/project-card";
 import { Reveal } from "@/components/reveal";
-import { SectionHeading } from "@/components/section-heading";
 import { projects } from "@/content/projects";
 
 export const metadata: Metadata = {
@@ -16,21 +15,14 @@ export default function WorkPage() {
     <>
       <section className="page-hero">
         <span className="eyebrow">Work</span>
-        <h1 className="page-title">Selected projects and systems work.</h1>
+        <h1 className="page-title">Work.</h1>
         <p className="page-copy">
-          This page collects the projects I want to stand behind publicly. Some
-          are open source and link directly to repositories. Some abstract
-          confidential work into the underlying systems questions and design
-          patterns.
+          Public projects, selected systems work, and current lines of
+          exploration.
         </p>
       </section>
 
       <section className="section">
-        <SectionHeading
-          description="The public side of what I build, with enough structure that new work can be added without redesigning the whole site."
-          eyebrow="Catalogue"
-          title="A growing body of work."
-        />
         <div className="work-grid">
           {projects.map((project, index) => (
             <Reveal key={project.slug} delay={index * 60}>
