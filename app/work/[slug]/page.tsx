@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 
 import { Reveal } from "@/components/reveal";
 import { getProjectBySlug, projects } from "@/content/projects";
+import { formatMonthYear } from "@/lib/utils";
 
 type WorkPageProps = {
   params: Promise<{ slug: string }>;
@@ -104,6 +105,10 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
                 <div>
                   <span>Focus</span>
                   <strong>{project.kind}</strong>
+                </div>
+                <div>
+                  <span>Updated</span>
+                  <strong>{formatMonthYear(project.updatedAt)}</strong>
                 </div>
               </div>
             </Reveal>

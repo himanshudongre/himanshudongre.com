@@ -35,9 +35,9 @@ export const experience: ExperienceItem[] = [
       label: "2019 - Present",
     },
     summary:
-      "Leading and building production AI systems for mobility, perception, and in-cabin intelligence while staying deeply involved in architecture, optimization, and deployment.",
+      "Leading and building production AI systems across mobility, perception, and in-cabin intelligence while staying close to architecture, optimization, and deployment.",
     highlights: [
-      "Led perception and in-cabin AI work across global mobility programs without stepping away from implementation detail.",
+      "Led perception and in-cabin AI work across global mobility programs while staying close to implementation detail.",
       "Managed 15-20 member teams while driving architecture, execution planning, technical reviews, and delivery.",
       "Built multi-model, multi-sensor pipelines under hard latency, compute, throughput, and safety constraints.",
       "Worked across deployment and optimization topics including ONNX conversion, TensorRT, quantization, distillation, and inference acceleration.",

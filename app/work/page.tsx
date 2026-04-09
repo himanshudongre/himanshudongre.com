@@ -17,8 +17,7 @@ export default function WorkPage() {
         <span className="eyebrow">Work</span>
         <h1 className="page-title">Work.</h1>
         <p className="page-copy">
-          Public projects, selected systems work, and current lines of
-          exploration.
+          Public projects, selected systems work, and open technical threads.
         </p>
       </section>
 

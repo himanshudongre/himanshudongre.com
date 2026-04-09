@@ -1,8 +1,28 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export function SiteHeader() {
+  const pathname = usePathname();
+
+  const links = [
+    { href: "/", label: "Home" },
+    { href: "/work", label: "Work" },
+    { href: "/updates", label: "Updates" },
+    { href: "/resume", label: "Resume" },
+  ];
+
+  function isActive(href: string) {
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    return pathname === href || pathname.startsWith(`${href}/`);
+  }
+
   return (
     <header className="site-header">
       <div className="shell site-header__inner">
@@ -12,10 +32,15 @@ export function SiteHeader() {
         </Link>
 
         <nav className="site-nav" aria-label="Primary">
-          <Link href="/">Home</Link>
-          <Link href="/work">Work</Link>
-          <Link href="/updates">Updates</Link>
-          <Link href="/resume">Resume</Link>
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={isActive(link.href) ? "is-active" : undefined}
+            >
+              {link.label}
+            </Link>
+          ))}
           <ThemeToggle />
         </nav>
       </div>

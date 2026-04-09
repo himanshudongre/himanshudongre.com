@@ -20,13 +20,13 @@ export function UpdateCard({ update }: UpdateCardProps) {
         <div className="update-links">
           {update.links.map((link) =>
             link.href.startsWith("/") ? (
-              <Link key={link.href} className="ghost-button" href={link.href}>
+              <Link key={link.href} className="text-link" href={link.href}>
                 {link.label}
               </Link>
             ) : (
               <a
                 key={link.href}
-                className="ghost-button"
+                className="text-link"
                 href={link.href}
                 rel="noreferrer"
                 target="_blank"

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Mono, Manrope, Newsreader } from "next/font/google";
+import { IBM_Plex_Mono, Newsreader, Public_Sans } from "next/font/google";
 
 import "./globals.css";
 
@@ -7,7 +7,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { ThemeScript } from "@/components/theme-script";
 
-const sans = Manrope({
+const sans = Public_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: "%s | Himanshu Dongre",
   },
   description:
-    "Personal website for Himanshu Dongre, an AI systems engineer and research-driven builder working on intelligent systems, production ML, and thoughtful technical work.",
+    "Personal website of Himanshu Dongre, an AI systems engineer working across production ML, intelligent systems, and applied research.",
   alternates: {
     canonical: "/",
   },
@@ -57,8 +57,8 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   colorScheme: "light dark",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f4efe6" },
-    { media: "(prefers-color-scheme: dark)", color: "#0b1017" },
+    { media: "(prefers-color-scheme: light)", color: "#f5f1e8" },
+    { media: "(prefers-color-scheme: dark)", color: "#0d1218" },
   ],
 };
 

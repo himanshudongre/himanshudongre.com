@@ -4,8 +4,8 @@ export const profile = {
   subheadline:
     "AI systems engineer working across production ML, intelligent systems, and applied research.",
   introduction: [
-    "I have spent 12+ years building production AI systems, leading engineering teams, and shipping work shaped by latency, compute, reliability, and deployment constraints.",
-    "I keep returning to questions about intelligence, memory, agency, representation, and what changes when ideas are forced into real systems.",
+    "I build production AI systems, lead engineering teams, and spend most of my time where model quality meets compute, latency, reliability, and deployment constraints.",
+    "I keep returning to questions about intelligence, agency, memory, and what only becomes clear once ideas are forced into working systems.",
   ],
   epigraph: "Building to understand. Understanding to build.",
   email: "himanshudongre1991@gmail.com",
@@ -22,7 +22,7 @@ export const profile = {
   metrics: [
     { value: "12+ years", label: "production AI and software systems" },
     { value: "15-20 people", label: "teams led across architecture and delivery" },
-    { value: "ML to agents", label: "from perception systems to reasoning infrastructure" },
+    { value: "Idea to deployment", label: "from early concepts to deployed systems" },
   ],
   socialLinks: [
     {
@@ -49,9 +49,8 @@ export const researchInterests = [
   "Trustworthy agents",
   "Memory and state",
   "Representation learning",
-  "Structured visual systems",
-  "Real-world ML deployment",
   "Reasoning infrastructure",
+  "Real-world ML deployment",
   "Systems that remain legible under constraints",
 ] as const;
 
@@ -59,7 +58,7 @@ export const principles = [
   {
     title: "Stay close to first principles",
     description:
-      "The work should still make sense after you strip away tooling, hype, and surface-level novelty.",
+      "The work should still make sense after you strip away tooling, hype, and surface detail.",
   },
   {
     title: "Let implementation sharpen the idea",

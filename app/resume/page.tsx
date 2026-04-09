@@ -18,8 +18,8 @@ export default function ResumePage() {
         <span className="eyebrow">Resume</span>
         <h1 className="page-title">Resume.</h1>
         <p className="page-copy">
-          Experience, education, and technical focus. The PDF version is
-          available for formal use.
+          Experience, education, and technical range. The PDF version is
+          available when a formal resume is useful.
         </p>
         <div className="resume-actions">
           <a

@@ -18,7 +18,10 @@ export default function Home() {
     <>
       <section className="hero">
         <Reveal className="hero__content" delay={40}>
-          <span className="eyebrow">Himanshu Dongre</span>
+          <div className="hero__meta">
+            <span className="eyebrow">Himanshu Dongre</span>
+            <span className="hero__location">{profile.location}</span>
+          </div>
           <h1 className="hero__title">{profile.headline}</h1>
           <p className="hero__lede">{profile.subheadline}</p>
 
@@ -85,7 +88,7 @@ export default function Home() {
 
       <section className="section">
         <SectionHeading
-          description="A few projects that best capture the kinds of problems I like to work on."
+          description="Projects that best reflect the problems, abstractions, and systems questions I keep returning to."
           eyebrow="Selected work"
           title="Selected work."
         />
@@ -100,7 +103,7 @@ export default function Home() {
 
       <section className="section">
         <SectionHeading
-          description="The ideas I keep circling back to, whether the work looks more like engineering or research."
+          description="Themes that keep showing up across both the systems I build and the questions I keep thinking about."
           eyebrow="Interests"
           title="Research interests."
         />
@@ -158,7 +161,7 @@ export default function Home() {
 
       <section className="section">
         <SectionHeading
-          description="A few principles that shape how I think about building and research."
+          description="A few principles that shape how I approach both engineering work and longer-horizon research questions."
           eyebrow="Philosophy"
           title="Working principles."
         />
@@ -186,7 +189,7 @@ export default function Home() {
 
       <section className="section">
         <SectionHeading
-          description="Recent public launches, milestones, and repository updates."
+          description="A short record of public releases, milestones, and notable changes."
           eyebrow="Updates"
           title="Recent updates."
         />

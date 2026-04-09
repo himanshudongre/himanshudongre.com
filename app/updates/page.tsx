@@ -17,7 +17,7 @@ export default function UpdatesPage() {
         <span className="eyebrow">Updates</span>
         <h1 className="page-title">Recent updates.</h1>
         <p className="page-copy">
-          Public launches, milestones, and notable changes across projects and repositories.
+          Public releases, milestones, and notable changes across projects and repositories.
         </p>
       </section>
 

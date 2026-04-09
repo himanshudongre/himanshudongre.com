@@ -11,7 +11,7 @@ export function SiteFooter() {
           {profile.socialLinks.map((link) => (
             <a
               key={link.label}
-              className="hero__social-link"
+              className="site-footer__link"
               href={link.href}
               rel="noreferrer"
               target="_blank"

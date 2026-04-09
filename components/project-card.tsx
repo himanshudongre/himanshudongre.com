@@ -26,12 +26,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
         ))}
       </div>
       <div className="card-links">
-        <Link className="ghost-button" href={`/work/${project.slug}`}>
-          Read more
+        <Link className="text-link" href={`/work/${project.slug}`}>
+          Project page
         </Link>
         {project.links[0] ? (
           <a
-            className="button"
+            className="text-link"
             href={project.links[0].href}
             rel="noreferrer"
             target={project.links[0].external ? "_blank" : undefined}
