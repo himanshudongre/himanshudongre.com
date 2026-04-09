@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ProjectCard } from "@/components/project-card";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
+import { SocialIconLinks } from "@/components/social-icon-links";
 import { UpdateCard } from "@/components/update-card";
 import { education, experience } from "@/content/experience";
 import { profile, principles, researchInterests } from "@/content/profile";
@@ -33,26 +34,14 @@ export default function Home() {
 
           <div className="hero__actions">
             <Link href="/work" className="button">
-              View selected work
+              Selected work
             </Link>
             <Link href="/resume" className="ghost-button">
-              View resume
+              Resume
             </Link>
           </div>
 
-          <div className="hero__socials">
-            {profile.socialLinks.map((link) => (
-              <a
-                key={link.label}
-                className="hero__social-link"
-                href={link.href}
-                rel="noreferrer"
-                target="_blank"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
+          <SocialIconLinks className="hero__socials" />
 
           <div className="hero__metrics">
             {profile.metrics.map((metric) => (

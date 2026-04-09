@@ -282,8 +282,7 @@ html[data-theme="dark"] .site-header {
 .site-nav a.is-active,
 .theme-toggle:hover,
 .text-link:hover,
-.hero__social-link:hover,
-.site-footer__link:hover {
+.social-icon-link:hover {
   color: var(--text);
 }
 
@@ -444,10 +443,10 @@ html[data-theme="dark"] .site-header {
 
 .hero__socials {
   margin-top: 1.05rem;
+  align-items: center;
 }
 
-.hero__social-link,
-.site-footer__link,
+.social-icon-link,
 .text-link {
   display: inline-flex;
   align-items: center;
@@ -457,13 +456,28 @@ html[data-theme="dark"] .site-header {
   transition: color var(--transition-fast);
 }
 
-.hero__social-link {
-  padding-bottom: 0.1rem;
-  border-bottom: 1px solid transparent;
+.social-icon-link {
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--bg-panel);
+  transition:
+    transform var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    background var(--transition-fast);
 }
 
-.hero__social-link:hover {
+.social-icon-link:hover {
+  transform: translateY(-1px);
   border-color: var(--line-strong);
+}
+
+.social-icon-link svg {
+  width: 1rem;
+  height: 1rem;
 }
 
 .text-link {
@@ -1060,6 +1074,7 @@ html[data-js="true"] .reveal.is-visible {
 
   .hero__socials {
     gap: 0.55rem 0.9rem;
+    justify-content: center;
   }
 
   .hero__portrait-card {
@@ -1149,6 +1164,30 @@ html[data-js="true"] .reveal.is-visible {
 
   .hero__location {
     font-size: 0.84rem;
+  }
+
+  .hero__content {
+    text-align: center;
+  }
+
+  .hero__meta {
+    justify-content: center;
+  }
+
+  .hero__summary {
+    justify-items: center;
+  }
+
+  .hero__summary p {
+    max-width: 34ch;
+  }
+
+  .hero__metrics {
+    text-align: center;
+  }
+
+  .hero__focus {
+    text-align: left;
   }
 
   .section-heading__title {

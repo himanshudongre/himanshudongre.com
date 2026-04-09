@@ -1,4 +1,5 @@
 import { profile } from "@/content/profile";
+import { SocialIconLinks } from "@/components/social-icon-links";
 
 export function SiteFooter() {
   return (
@@ -7,19 +8,7 @@ export function SiteFooter() {
         <p className="site-footer__note">
           {profile.epigraph} · {new Date().getFullYear()}
         </p>
-        <div className="site-footer__links">
-          {profile.socialLinks.map((link) => (
-            <a
-              key={link.label}
-              className="site-footer__link"
-              href={link.href}
-              rel="noreferrer"
-              target="_blank"
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
+        <SocialIconLinks className="site-footer__links" />
       </div>
     </footer>
   );
