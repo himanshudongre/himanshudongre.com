@@ -4,8 +4,8 @@ export const profile = {
   subheadline:
     "AI systems engineer working across production ML, intelligent systems, and applied research.",
   introduction: [
-    "I build production AI systems, lead engineering teams, and spend most of my time where model quality meets compute, latency, reliability, and deployment constraints.",
-    "I keep returning to questions about intelligence, agency, memory, and what only becomes clear once ideas are forced into working systems.",
+    "I build production AI systems, lead engineering teams, and work where model quality meets compute, latency, reliability, and deployment constraints.",
+    "I keep returning to questions about intelligence, agency, memory, and what becomes clearer once ideas are forced into working systems.",
   ],
   epigraph: "Building to understand. Understanding to build.",
   email: "himanshudongre1991@gmail.com",

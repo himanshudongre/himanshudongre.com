@@ -6,7 +6,7 @@ import { education, experience, skillGroups } from "@/content/experience";
 import { profile } from "@/content/profile";
 
 export const metadata: Metadata = {
-  title: "Resume",
+  title: "Background",
   description:
     "Experience, education, and capabilities for Himanshu Dongre.",
 };
@@ -15,11 +15,11 @@ export default function ResumePage() {
   return (
     <>
       <section className="page-hero">
-        <span className="eyebrow">Resume</span>
-        <h1 className="page-title">Resume.</h1>
+        <span className="eyebrow">Background</span>
+        <h1 className="page-title">Background.</h1>
         <p className="page-copy">
-          Experience, education, and technical range. The PDF version is
-          available when a formal resume is useful.
+          Experience, education, and technical range. A downloadable CV is
+          available when a formal document is useful.
         </p>
         <div className="resume-actions">
           <a
@@ -28,7 +28,7 @@ export default function ResumePage() {
             rel="noreferrer"
             target="_blank"
           >
-            Open PDF
+            Download CV (PDF)
           </a>
           <a className="ghost-button" href={`mailto:${profile.email}`}>
             Contact

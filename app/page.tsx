@@ -6,7 +6,7 @@ import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { SocialIconLinks } from "@/components/social-icon-links";
 import { UpdateCard } from "@/components/update-card";
-import { education, experience } from "@/content/experience";
+import { experience } from "@/content/experience";
 import { profile, principles, researchInterests } from "@/content/profile";
 import { projects } from "@/content/projects";
 import { updates } from "@/content/updates";
@@ -25,6 +25,17 @@ export default function Home() {
           </div>
           <h1 className="hero__title">{profile.headline}</h1>
           <p className="hero__lede">{profile.subheadline}</p>
+          <div className="hero__portrait-inline">
+            <div className="hero__portrait-inline-frame">
+              <Image
+                alt={profile.portrait.alt}
+                className="hero__portrait"
+                height={1600}
+                src={profile.portrait.src}
+                width={1200}
+              />
+            </div>
+          </div>
 
           <div className="hero__summary">
             {profile.introduction.map((paragraph) => (
@@ -34,10 +45,10 @@ export default function Home() {
 
           <div className="hero__actions">
             <Link href="/work" className="button">
-              Selected work
+              Personal projects
             </Link>
             <Link href="/resume" className="ghost-button">
-              Resume
+              Background
             </Link>
           </div>
 
@@ -78,13 +89,13 @@ export default function Home() {
       <section className="section">
         <SectionHeading
           description="Projects that best reflect the problems, abstractions, and systems questions I keep returning to."
-          eyebrow="Selected work"
-          title="Selected work."
+          eyebrow="Projects"
+          title="Personal projects."
         />
         <div className="grid projects-grid">
           {featuredProjects.map((project, index) => (
             <Reveal key={project.slug} delay={index * 70}>
-              <ProjectCard project={project} />
+              <ProjectCard project={project} tagLimit={3} />
             </Reveal>
           ))}
         </div>
@@ -214,32 +225,19 @@ export default function Home() {
                 rel="noreferrer"
                 target="_blank"
               >
-                Resume PDF
-              </a>
-              <a
-                className="ghost-button"
-                href={profile.socialLinks[0].href}
-                rel="noreferrer"
-                target="_blank"
-              >
-                GitHub
+                Download CV (PDF)
               </a>
             </div>
           </Reveal>
 
           <Reveal className="contact-card" delay={110}>
-            <h2>Education</h2>
-            <ul className="education-list">
-              {education.map((item) => (
-                <li key={`${item.institution}-${item.degree}`}>
-                  <strong>{item.degree}</strong>
-                  <br />
-                  {item.institution}
-                  <br />
-                  {item.period}
-                </li>
-              ))}
-            </ul>
+            <h2>Elsewhere</h2>
+            <p>
+              GitHub is the best place to start for current public work.
+              LinkedIn and X are where I usually post broader progress and
+              context.
+            </p>
+            <SocialIconLinks className="contact-card__socials" />
           </Reveal>
         </div>
       </section>

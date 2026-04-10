@@ -4,26 +4,29 @@ import type { Project } from "@/content/projects";
 
 type ProjectCardProps = {
   project: Project;
+  tagLimit?: number;
 };
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, tagLimit = 4 }: ProjectCardProps) {
   return (
     <article className="card">
-      <div className="card__kicker">
-        <span>{project.kind}</span>
-        <span>{project.year}</span>
-        <span>{project.status}</span>
-      </div>
-      <h3>
-        <Link href={`/work/${project.slug}`}>{project.title}</Link>
-      </h3>
-      <p>{project.summary}</p>
-      <div className="tag-list">
-        {project.tags.slice(0, 4).map((tag) => (
-          <span key={tag} className="inline-tag">
-            {tag}
-          </span>
-        ))}
+      <div className="card__body">
+        <div className="card__kicker">
+          <span>{project.kind}</span>
+          <span>{project.year}</span>
+          <span>{project.status}</span>
+        </div>
+        <h3>
+          <Link href={`/work/${project.slug}`}>{project.title}</Link>
+        </h3>
+        <p>{project.summary}</p>
+        <div className="tag-list">
+          {project.tags.slice(0, tagLimit).map((tag) => (
+            <span key={tag} className="inline-tag">
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
       <div className="card-links">
         <Link className="text-link" href={`/work/${project.slug}`}>

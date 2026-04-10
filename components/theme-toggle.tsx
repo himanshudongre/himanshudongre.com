@@ -1,19 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type Theme = "light" | "dark";
 
-export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof document !== "undefined") {
-      return document.documentElement.dataset.theme === "dark"
-        ? "dark"
-        : "light";
-    }
+function getTheme(): Theme {
+  return document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+}
 
-    return "light";
-  });
+export function ThemeToggle() {
+  const [theme, setTheme] = useState<Theme>("light");
+
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      setTheme(getTheme());
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
 
   function applyTheme(nextTheme: Theme) {
     document.documentElement.dataset.theme = nextTheme;
@@ -23,7 +27,8 @@ export function ThemeToggle() {
   }
 
   function toggleTheme() {
-    const nextTheme: Theme = theme === "dark" ? "light" : "dark";
+    const currentTheme = getTheme();
+    const nextTheme: Theme = currentTheme === "dark" ? "light" : "dark";
     const withViewTransition = document as Document & {
       startViewTransition?: (callback: () => void) => void;
     };

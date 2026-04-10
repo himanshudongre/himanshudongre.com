@@ -169,6 +169,7 @@ button {
   font-weight: 500;
   letter-spacing: -0.035em;
   line-height: 0.96;
+  text-wrap: balance;
 }
 
 .section-heading__title {
@@ -183,6 +184,7 @@ button {
   color: var(--text-soft);
   line-height: 1.62;
   font-size: 0.94rem;
+  text-wrap: pretty;
 }
 
 .site-header {
@@ -389,6 +391,7 @@ html[data-theme="dark"] .site-header {
   color: var(--text-soft);
   line-height: 1.66;
   font-size: 0.95rem;
+  text-wrap: pretty;
 }
 
 .hero__actions,
@@ -444,6 +447,10 @@ html[data-theme="dark"] .site-header {
 .hero__socials {
   margin-top: 1.05rem;
   align-items: center;
+}
+
+.hero__portrait-inline {
+  display: none;
 }
 
 .social-icon-link,
@@ -638,14 +645,28 @@ html[data-theme="dark"] .site-header {
 
 .projects-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
 }
 
 .card {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
   padding: 1.05rem 1.1rem;
+  height: 100%;
   transition:
     transform var(--transition-fast),
     border-color var(--transition-fast),
     background var(--transition-fast);
+}
+
+.projects-grid > .reveal {
+  height: 100%;
+}
+
+.card__body {
+  display: grid;
+  align-content: start;
+  gap: 0.7rem;
 }
 
 .card__kicker,
@@ -660,6 +681,7 @@ html[data-theme="dark"] .site-header {
   font-family: var(--font-mono), monospace;
   text-transform: uppercase;
   letter-spacing: 0.14em;
+  line-height: 1.45;
   color: var(--text-faint);
 }
 
@@ -684,10 +706,7 @@ html[data-theme="dark"] .site-header {
   color: var(--text-soft);
   line-height: 1.6;
   font-size: 0.94rem;
-}
-
-.card p {
-  margin-top: 0.55rem;
+  text-wrap: pretty;
 }
 
 .tag-list,
@@ -699,13 +718,21 @@ html[data-theme="dark"] .site-header {
 }
 
 .tag-list {
-  margin-top: 0.7rem;
+  margin-top: 0.1rem;
+  gap: 0.55rem;
 }
 
 .card-links,
 .update-links,
 .resume-actions {
   margin-top: 0.8rem;
+}
+
+.card-links {
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.95rem;
+  border-top: 1px solid var(--line);
 }
 
 .interest-layout,
@@ -921,6 +948,13 @@ html[data-theme="dark"] .site-header {
   font-weight: 500;
 }
 
+.contact-card__socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 0.35rem;
+}
+
 .site-footer {
   padding: 0.9rem 0 1.35rem;
 }
@@ -1049,16 +1083,37 @@ html[data-js="true"] .reveal.is-visible {
   }
 
   .hero__title {
-    max-width: 9.25ch;
-    font-size: clamp(2.2rem, 11vw, 3.15rem);
+    max-width: 10ch;
+    font-size: clamp(1.82rem, 8.2vw, 2.35rem);
+    line-height: 0.98;
   }
 
   .hero__lede {
-    font-size: 0.96rem;
+    max-width: none;
+    font-size: 0.93rem;
+  }
+
+  .hero__portrait-inline {
+    display: block;
+    margin-top: 0.95rem;
+  }
+
+  .hero__portrait-inline-frame {
+    position: relative;
+    overflow: hidden;
+    width: min(36vw, 8.1rem);
+    border-radius: 18px;
+    aspect-ratio: 4 / 4.8;
+    border: 1px solid var(--line);
+    background:
+      radial-gradient(circle at top, rgba(255, 255, 255, 0.28), transparent 42%),
+      linear-gradient(135deg, rgba(36, 95, 114, 0.14), transparent 55%);
+    box-shadow: var(--shadow-soft);
   }
 
   .hero__summary p {
-    font-size: 0.93rem;
+    max-width: none;
+    font-size: 0.9rem;
   }
 
   .hero__actions {
@@ -1074,22 +1129,11 @@ html[data-js="true"] .reveal.is-visible {
 
   .hero__socials {
     gap: 0.55rem 0.9rem;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .hero__portrait-card {
-    max-width: none;
-    grid-template-columns: 1fr;
-    padding: 0.72rem;
-  }
-
-  .hero__portrait-frame {
-    min-height: auto;
-    aspect-ratio: 4 / 4.9;
-  }
-
-  .hero__focus {
-    padding: 0.9rem;
+    display: none;
   }
 
   .hero__portrait-card,
@@ -1105,9 +1149,13 @@ html[data-js="true"] .reveal.is-visible {
   }
 
   .hero__metrics {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.7rem;
     margin-top: 1.05rem;
+  }
+
+  .hero__metrics .metric:last-child {
+    grid-column: 1 / -1;
   }
 
   .page-title,
@@ -1166,28 +1214,24 @@ html[data-js="true"] .reveal.is-visible {
     font-size: 0.84rem;
   }
 
-  .hero__content {
-    text-align: center;
+  .hero__content,
+  .hero__metrics {
+    text-align: left;
   }
 
   .hero__meta {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
-  .hero__summary {
-    justify-items: center;
+  .hero__title {
+    max-width: 10ch;
+    font-size: clamp(1.7rem, 8vw, 2.08rem);
   }
 
+  .hero__location,
+  .hero__lede,
   .hero__summary p {
-    max-width: 34ch;
-  }
-
-  .hero__metrics {
-    text-align: center;
-  }
-
-  .hero__focus {
-    text-align: left;
+    font-size: 0.88rem;
   }
 
   .section-heading__title {

@@ -10,9 +10,9 @@ export function SiteHeader() {
 
   const links = [
     { href: "/", label: "Home" },
-    { href: "/work", label: "Work" },
+    { href: "/work", label: "Projects" },
     { href: "/updates", label: "Updates" },
-    { href: "/resume", label: "Resume" },
+    { href: "/resume", label: "Background" },
   ];
 
   function isActive(href: string) {

@@ -5,19 +5,19 @@ import { Reveal } from "@/components/reveal";
 import { projects } from "@/content/projects";
 
 export const metadata: Metadata = {
-  title: "Work",
+  title: "Projects",
   description:
-    "Selected projects, public systems work, and active ideas from Himanshu Dongre.",
+    "Personal projects, selected systems work, and active technical ideas from Himanshu Dongre.",
 };
 
 export default function WorkPage() {
   return (
     <>
       <section className="page-hero">
-        <span className="eyebrow">Work</span>
-        <h1 className="page-title">Work.</h1>
+        <span className="eyebrow">Projects</span>
+        <h1 className="page-title">Personal projects.</h1>
         <p className="page-copy">
-          Public projects, selected systems work, and open technical threads.
+          Personal projects, selected systems work, and public technical threads.
         </p>
       </section>
 
