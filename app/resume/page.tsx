@@ -5,6 +5,8 @@ import { SectionHeading } from "@/components/section-heading";
 import { education, experience, skillGroups } from "@/content/experience";
 import { profile } from "@/content/profile";
 
+const [currentExperience, ...previousExperience] = experience;
+
 export const metadata: Metadata = {
   title: "Background",
   description:
@@ -44,30 +46,45 @@ export default function ResumePage() {
               eyebrow="Experience"
               title="Professional history."
             />
-            {experience.map((item, index) => (
-              <Reveal key={`${item.company}-${item.period.start}`} className="resume-card" delay={index * 65}>
-                <div className="resume-item">
-                  <div className="card__kicker">
-                    <span>{item.period.label}</span>
-                    <span>{item.location}</span>
-                  </div>
-                  <h2 className="resume-role">
-                    {item.role} · {item.company}
-                  </h2>
-                  <p>{item.summary}</p>
-                  <ul className="resume-list">
-                    {item.highlights.map((highlight) => (
-                      <li key={highlight}>{highlight}</li>
-                    ))}
-                  </ul>
+            <Reveal className="resume-card" delay={0}>
+              <div className="resume-item">
+                <div className="card__kicker">
+                  <span>{currentExperience.period.label}</span>
+                  <span>{currentExperience.location}</span>
                 </div>
-              </Reveal>
-            ))}
+                <h2 className="resume-role">
+                  {currentExperience.role} · {currentExperience.company}
+                </h2>
+                <p>{currentExperience.summary}</p>
+                <ul className="resume-list">
+                  {currentExperience.highlights.map((highlight) => (
+                    <li key={highlight}>{highlight}</li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+
+            <Reveal className="experience-compact" delay={70}>
+              <h3>Earlier work</h3>
+              <ul className="experience-compact__list">
+                {previousExperience.map((item) => (
+                  <li key={`${item.company}-${item.period.start}`}>
+                    <strong>
+                      {item.role} · {item.company}
+                    </strong>
+                    <span>
+                      {item.period.label} · {item.location}
+                    </span>
+                    <p>{item.summary}</p>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
           </div>
 
           <div className="grid">
             <SectionHeading
-              description="Education and the technical areas I reach for most often."
+              description="Education and the technical scope I work across most often."
               eyebrow="Background"
               title="Education and technical scope."
             />

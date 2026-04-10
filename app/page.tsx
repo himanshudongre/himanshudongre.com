@@ -80,7 +80,7 @@ export default function Home() {
             />
           </div>
           <div className="hero__focus">
-            <h2>Current focus</h2>
+            <h2>Current work</h2>
             <ul>
               {profile.currentFocus.map((item) => (
                 <li key={item}>{item}</li>
@@ -92,7 +92,7 @@ export default function Home() {
 
       <section className="section">
         <SectionHeading
-          description="The main line of my professional work: production AI, perception systems, optimization, and technical leadership."
+          description="The main line of my professional work."
           eyebrow="Experience"
           title="Experience."
         />
@@ -118,7 +118,7 @@ export default function Home() {
           </Reveal>
 
           <Reveal className="experience-compact" delay={110}>
-            <h3>Earlier roles</h3>
+            <h3>Earlier work</h3>
             <ul className="experience-compact__list">
               {previousExperience.map((item) => (
                 <li key={`${item.company}-${item.period.start}`}>
@@ -128,7 +128,6 @@ export default function Home() {
                   <span>
                     {item.period.label} · {item.location}
                   </span>
-                  <p>{item.summary}</p>
                 </li>
               ))}
             </ul>
@@ -213,7 +212,7 @@ export default function Home() {
       <section className="section">
         <SectionHeading
           description="A short public record of releases and meaningful project changes."
-          eyebrow="Updates"
+          eyebrow="Log"
           title="Project log."
         />
         <div className="updates-grid">
@@ -254,11 +253,10 @@ export default function Home() {
           </Reveal>
 
           <Reveal className="contact-card" delay={110}>
-            <h2>Elsewhere</h2>
+            <h2>Public links</h2>
             <p>
               GitHub is the best place to start for current public work.
-              LinkedIn and X are where I usually post broader progress and
-              context.
+              LinkedIn and X carry occasional public updates and context.
             </p>
             <SocialIconLinks className="contact-card__socials" />
           </Reveal>

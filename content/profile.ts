@@ -4,7 +4,7 @@ export const profile = {
   subheadline:
     "AI systems engineer working across production ML, intelligent systems, and applied research.",
   introduction: [
-    "I build production AI systems and stay close to architecture, deployment, optimization, and the tradeoffs that only show up under real constraints.",
+    "I build production AI systems and stay close to architecture, deployment, optimization, and the tradeoffs that only emerge under real constraints.",
     "Outside work, I use small independent systems like Smriti, Sentinel OS, and PropOps to think more clearly about reasoning, agency, trust, and decision support.",
   ],
   epigraph: "Building to understand. Understanding to build.",
@@ -15,9 +15,9 @@ export const profile = {
     alt: "Portrait of Himanshu Dongre under flowering branches.",
   },
   currentFocus: [
-    "Reasoning state, memory, and agent workflows.",
-    "Trust, policy, and verifiable execution for AI systems.",
-    "Decision-support tools that make messy evidence easier to reason about.",
+    "Reasoning workflows with explicit state and recoverable context.",
+    "Trust boundaries, policy, and verifiable execution for AI systems.",
+    "Decision-support tools for messy, incomplete, real-world evidence.",
   ],
   metrics: [
     { value: "12+ years", label: "production AI and software systems" },

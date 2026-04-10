@@ -13,9 +13,9 @@ export const updates: UpdateEntry[] = [
   {
     date: "2026-04-07",
     kind: "Prototype",
-    title: "PropOps public prototype released.",
+    title: "PropOps: early prototype.",
     summary:
-      "An early public prototype for AI-assisted property diligence, focused on making fragmented legal and registry risk easier to read.",
+      "A narrow public prototype for property diligence, centered on gathering fragmented legal and registry signals and surfacing inconsistencies for human review.",
     links: [
       { label: "Notes", href: "/work/propops" },
       { label: "Repository", href: "https://github.com/himanshudongre/propops" },
@@ -24,9 +24,9 @@ export const updates: UpdateEntry[] = [
   {
     date: "2026-04-04",
     kind: "Release",
-    title: "Smriti public repo and demo released.",
+    title: "Smriti: public repo and demo.",
     summary:
-      "A reasoning-state system built around checkpoints, branching, and cleaner recovery from context drift across models and sessions.",
+      "Checkpointing, branching, and restoration for long-running reasoning state across sessions, tools, and model switches.",
     links: [
       { label: "Notes", href: "/work/smriti" },
       { label: "Repository", href: "https://github.com/himanshudongre/smriti" },
@@ -34,10 +34,10 @@ export const updates: UpdateEntry[] = [
   },
   {
     date: "2026-02-22",
-    kind: "Open source",
-    title: "Sentinel OS public milestone.",
+    kind: "Milestone",
+    title: "Sentinel OS: first public milestone.",
     summary:
-      "The repository captures a clearer direction for local-first policy enforcement and verifiable agent execution.",
+      "A clearer public direction for local-first policy enforcement, append-only execution history, and verifiable agent behavior.",
     links: [
       { label: "Notes", href: "/work/sentinel-os" },
       {

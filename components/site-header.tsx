@@ -11,7 +11,7 @@ export function SiteHeader() {
   const links = [
     { href: "/", label: "Home" },
     { href: "/work", label: "Projects" },
-    { href: "/updates", label: "Updates" },
+    { href: "/updates", label: "Log" },
     { href: "/resume", label: "Background" },
   ];
 

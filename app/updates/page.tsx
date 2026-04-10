@@ -5,7 +5,7 @@ import { UpdateCard } from "@/components/update-card";
 import { updates } from "@/content/updates";
 
 export const metadata: Metadata = {
-  title: "Updates",
+  title: "Log",
   description:
     "A short public log of releases and meaningful changes across Himanshu Dongre's current independent projects.",
 };
@@ -14,7 +14,7 @@ export default function UpdatesPage() {
   return (
     <>
       <section className="page-hero">
-        <span className="eyebrow">Updates</span>
+        <span className="eyebrow">Log</span>
         <h1 className="page-title">Project log.</h1>
         <p className="page-copy">
           A short public record of releases and meaningful changes across current independent projects.
