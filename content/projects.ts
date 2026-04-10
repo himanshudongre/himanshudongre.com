@@ -57,7 +57,7 @@ export const projects: Project[] = [
     title: "Smriti",
     kind: "Reasoning infrastructure",
     summary:
-      "A system for treating long-running reasoning as explicit state, with checkpoints, branching, and clean restoration across tools and model switches.",
+      "Checkpointed reasoning state for long-running, multi-model work.",
     role: "Concept, architecture, and implementation.",
     status: "Active",
     year: "2026",
@@ -83,11 +83,11 @@ export const projects: Project[] = [
     ],
     snapshot: {
       challenge:
-        "Long-running reasoning work becomes fragile when state exists only as a transcript.",
+        "Long-running reasoning becomes brittle when usable state only exists inside transcript text.",
       build:
-        "Explicit checkpoints, branches, and restoration of reasoning state across tools and model switches.",
+        "Checkpoint, branch, and restore reasoning state across tools and model switches.",
       signal:
-        "The core object is not the chat log. It is the state you want to preserve, compare, and recover.",
+        "The core object is not the chat log. It is the state you want to preserve and recover.",
     },
     facts: [
       {
@@ -133,25 +133,25 @@ export const projects: Project[] = [
       {
         title: "State over transcript",
         description:
-          "The important unit is not the chat log. It is the reasoning state you want to preserve and recover.",
+          "The important unit is the reasoning state, not the transcript around it.",
       },
       {
         title: "Model switches should be cheap",
         description:
-          "Changing tools or models should not mean reconstructing your own context from scratch.",
+          "Changing tools or models should not require rebuilding context by hand.",
       },
       {
         title: "Branches clarify thought",
         description:
-          "Competing lines of reasoning become more useful when they are explicit objects you can revisit.",
+          "Alternative lines of reasoning become more useful when they are explicit and revisitable.",
       },
     ],
     sections: [
       {
         title: "Question",
         paragraphs: [
-          "I built Smriti after running into the same failure mode over and over during serious multi-model work: the reasoning was good, but the state was brittle.",
-          "Once you change tools, switch models, or revisit a thread later, too much of the useful structure is buried inside prose. The goal here is to make that structure explicit enough to save, restore, branch, and inspect.",
+          "I built Smriti after repeatedly hitting the same failure mode in multi-model work: the reasoning was good, but the usable state was brittle.",
+          "Once tools changed, models switched, or a thread was revisited later, too much of the structure had to be reconstructed from prose. The goal is to make that structure explicit enough to save, branch, restore, and inspect.",
         ],
       },
       {
@@ -174,8 +174,8 @@ export const projects: Project[] = [
     ],
     notes: [
       "The public repository and demo are already live.",
-      "The implementation currently centers on checkpoint capture, restore, and branching across multi-model workflows.",
-      "The next real decision is how much structure the checkpoint object should carry before it slows the reasoning loop down.",
+      "The implementation currently centers on capture, restore, and branching across multi-model workflows.",
+      "The next real decision is how much structure a checkpoint should carry before it slows the workflow down.",
     ],
   },
   {
@@ -183,7 +183,7 @@ export const projects: Project[] = [
     title: "Sentinel OS",
     kind: "Trust kernel for agents",
     summary:
-      "A local-first trust layer for agent systems built around policy enforcement, append-only execution history, and verifiable outcomes.",
+      "A local-first trust kernel for agent systems with policy checks, append-only history, and verification.",
     role: "Concept, system design, and implementation.",
     status: "Active",
     year: "2026",
@@ -206,9 +206,9 @@ export const projects: Project[] = [
       challenge:
         "Serious agents need enforceable boundaries and a trustworthy record of what they actually did.",
       build:
-        "A local-first trust kernel with policy checks, append-only execution history, and verifiable outcomes.",
+        "A local-first trust kernel with policy checks, append-only history, and verifiable outcomes.",
       signal:
-        "Pushes agent safety away from vague logging and toward systems-level integrity guarantees.",
+        "Moves agent safety away from vague logging and toward systems-level integrity guarantees.",
     },
     facts: [
       {
@@ -254,17 +254,17 @@ export const projects: Project[] = [
       {
         title: "Trust must be reconstructable",
         description:
-          "If a system cannot show what happened after the fact, it is not trustworthy enough for serious use.",
+          "If a system cannot show what happened after the fact, it is not trustworthy enough.",
       },
       {
         title: "Policies should be visible",
         description:
-          "Constraint systems matter more when humans can understand the rules that governed an action.",
+          "Constraint systems matter more when humans can see the rules that governed an action.",
       },
       {
         title: "Integrity is infrastructure",
         description:
-          "Verification belongs in the system design, not as an afterthought once the demo already works.",
+          "Verification belongs in the system design, not as an afterthought.",
       },
     ],
     sections: [
@@ -272,7 +272,7 @@ export const projects: Project[] = [
         title: "Question",
         paragraphs: [
           "The harder question for serious agent use is not raw capability. It is whether actions can be constrained, reconstructed, and verified without trusting the model on its own terms.",
-          "Sentinel OS is an attempt to answer that question at the systems layer instead of treating it as a logging or prompting problem.",
+          "Sentinel OS treats that as a systems problem rather than a logging or prompting problem.",
         ],
       },
       {
@@ -295,7 +295,7 @@ export const projects: Project[] = [
     ],
     notes: [
       "The current public milestone covers signed policy decisions, append-only records, and basic verification.",
-      "The next useful step is replay, richer inspection tooling, and a clearer model for state and memory transitions.",
+      "The next useful step is replay, richer inspection tooling, and a clearer model for memory and state transitions.",
     ],
   },
   {
@@ -303,7 +303,7 @@ export const projects: Project[] = [
     title: "PropOps",
     kind: "Decision support system",
     summary:
-      "A decision-support system for property diligence that gathers fragmented registry and legal signals, surfaces inconsistencies, and keeps the final judgment with the human user.",
+      "A property-diligence system that gathers fragmented records, surfaces inconsistencies, and keeps judgment with the human operator.",
     role: "Problem framing, systems design, and implementation.",
     status: "Prototype",
     year: "2026",
@@ -324,11 +324,11 @@ export const projects: Project[] = [
     ],
     snapshot: {
       challenge:
-        "Important real-estate decisions are slowed down by fragmented records and hard-to-interpret legal signals.",
+        "Important property decisions are slowed down by fragmented records and hard-to-interpret legal signals.",
       build:
-        "An AI-assisted diligence workflow that gathers, cross-checks, and summarizes risk-relevant property signals.",
+        "An AI-assisted diligence workflow that gathers, cross-checks, and summarizes risk-relevant signals.",
       signal:
-        "The value is not prediction theatre. It is making evidence easier to inspect and reason about.",
+        "The value is not prediction theatre. It is making evidence easier to inspect.",
     },
     facts: [
       {
@@ -374,7 +374,7 @@ export const projects: Project[] = [
       {
         title: "Interpretation is the bottleneck",
         description:
-          "The hard part is often not access to data. It is turning scattered evidence into a usable picture.",
+          "The hard part is often not access to data. It is turning scattered evidence into something usable.",
       },
       {
         title: "AI should reduce ambiguity",
@@ -384,15 +384,15 @@ export const projects: Project[] = [
       {
         title: "Practical problems matter",
         description:
-          "Some of the most interesting systems work lives in mundane decisions with real consequences.",
+          "Some of the most interesting systems work lives in ordinary decisions with real consequences.",
       },
     ],
     sections: [
       {
         title: "Question",
         paragraphs: [
-          "Important property decisions often break down at the interpretation layer. The underlying information exists, but it is fragmented, inconsistent, and expensive to reason through under time pressure.",
-          "PropOps is an attempt to reduce that interpretive burden without pretending the final answer can be automated away.",
+          "Property diligence often breaks down at the interpretation layer. The information exists, but it is fragmented, inconsistent, and slow to reason through under time pressure.",
+          "PropOps reduces that burden without pretending the decision itself can be automated away.",
         ],
       },
       {
@@ -413,8 +413,8 @@ export const projects: Project[] = [
       },
     ],
     notes: [
-      "The current prototype is intentionally narrow: diligence before transaction commitment, not end-to-end transaction workflow.",
-      "Most of the difficulty is in evidence normalization, source traceability, and uncertainty handling rather than summary generation.",
+      "The current prototype is intentionally narrow: diligence before commitment, not end-to-end transaction workflow.",
+      "Most of the difficulty is in normalization, source traceability, and uncertainty handling rather than summary generation.",
     ],
   },
 ];

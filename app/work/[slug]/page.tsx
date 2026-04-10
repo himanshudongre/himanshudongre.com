@@ -94,16 +94,14 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
             {project.systemMap?.length ? (
               <Reveal className="detail-section" delay={45}>
                 <h2>System sketch</h2>
-                <div className="detail-system-flow">
+                <div className="detail-architecture">
                   {project.systemMap.map((block, index) => (
-                    <article key={block.title} className="detail-system-block">
-                      <span className="detail-system-block__index">
+                    <article key={block.title} className="detail-architecture__node">
+                      <span className="detail-architecture__index">
                         {String(index + 1).padStart(2, "0")}
                       </span>
-                      <div className="detail-system-block__body">
-                        <strong>{block.title}</strong>
-                        <p>{block.description}</p>
-                      </div>
+                      <strong>{block.title}</strong>
+                      <p>{block.description}</p>
                     </article>
                   ))}
                 </div>
