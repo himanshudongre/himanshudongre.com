@@ -94,11 +94,16 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
             {project.systemMap?.length ? (
               <Reveal className="detail-section" delay={45}>
                 <h2>System sketch</h2>
-                <div className="detail-system-grid">
-                  {project.systemMap.map((block) => (
+                <div className="detail-system-flow">
+                  {project.systemMap.map((block, index) => (
                     <article key={block.title} className="detail-system-block">
-                      <strong>{block.title}</strong>
-                      <p>{block.description}</p>
+                      <span className="detail-system-block__index">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <div className="detail-system-block__body">
+                        <strong>{block.title}</strong>
+                        <p>{block.description}</p>
+                      </div>
                     </article>
                   ))}
                 </div>
@@ -144,7 +149,7 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
 
           <div className="detail-sidebar">
             <Reveal className="detail-sidebar__card" delay={50}>
-              <h2>Status</h2>
+              <h2>Project spec</h2>
               <div className="detail-sidebar__meta">
                 <div>
                   <span>Role</span>
@@ -162,6 +167,12 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
                   <span>Updated</span>
                   <strong>{formatMonthYear(project.updatedAt)}</strong>
                 </div>
+                {project.facts?.map((fact) => (
+                  <div key={fact.label}>
+                    <span>{fact.label}</span>
+                    <strong>{fact.value}</strong>
+                  </div>
+                ))}
               </div>
             </Reveal>
 
@@ -178,7 +189,7 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
 
             {project.notes.length ? (
               <Reveal className="detail-sidebar__card" delay={190}>
-                <h2>Current state</h2>
+                <h2>Where it is now</h2>
                 <ul className="detail-sidebar__list">
                   {project.notes.map((note) => (
                     <li key={note}>{note}</li>

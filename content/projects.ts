@@ -16,6 +16,11 @@ export type ProjectSnapshot = {
   signal: string;
 };
 
+export type ProjectFact = {
+  label: string;
+  value: string;
+};
+
 export type ProjectSystemBlock = {
   title: string;
   description: string;
@@ -39,6 +44,7 @@ export type Project = {
   tags: string[];
   links: ProjectLink[];
   snapshot?: ProjectSnapshot;
+  facts?: ProjectFact[];
   systemMap?: ProjectSystemBlock[];
   keyIdeas?: ProjectIdea[];
   sections: ProjectSection[];
@@ -83,6 +89,24 @@ export const projects: Project[] = [
       signal:
         "The core object is not the chat log. It is the state you want to preserve, compare, and recover.",
     },
+    facts: [
+      {
+        label: "Primary object",
+        value: "Checkpoints and branches for reasoning state.",
+      },
+      {
+        label: "System boundary",
+        value: "Capture, restore, and compare state across tools and models.",
+      },
+      {
+        label: "Current artifact",
+        value: "Public repository and demo.",
+      },
+      {
+        label: "Pressure point",
+        value: "Checkpoint granularity versus workflow overhead.",
+      },
+    ],
     systemMap: [
       {
         title: "Capture",
@@ -124,14 +148,14 @@ export const projects: Project[] = [
     ],
     sections: [
       {
-        title: "Problem framing",
+        title: "Question",
         paragraphs: [
           "I built Smriti after running into the same failure mode over and over during serious multi-model work: the reasoning was good, but the state was brittle.",
           "Once you change tools, switch models, or revisit a thread later, too much of the useful structure is buried inside prose. The goal here is to make that structure explicit enough to save, restore, branch, and inspect.",
         ],
       },
       {
-        title: "Design choices",
+        title: "Approach",
         bullets: [
           "Checkpoint decisions, assumptions, open questions, and artifacts as structured state rather than as implicit chat context.",
           "Restore a clean reasoning context without leaking in later turns that no longer belong.",
@@ -150,7 +174,8 @@ export const projects: Project[] = [
     ],
     notes: [
       "The public repository and demo are already live.",
-      "The current focus is making checkpointing and branching robust before expanding integrations.",
+      "The implementation currently centers on checkpoint capture, restore, and branching across multi-model workflows.",
+      "The next real decision is how much structure the checkpoint object should carry before it slows the reasoning loop down.",
     ],
   },
   {
@@ -185,6 +210,24 @@ export const projects: Project[] = [
       signal:
         "Pushes agent safety away from vague logging and toward systems-level integrity guarantees.",
     },
+    facts: [
+      {
+        label: "Primary object",
+        value: "Signed policy decisions and append-only action records.",
+      },
+      {
+        label: "System boundary",
+        value: "Pre-action constraint checks and post-action verification.",
+      },
+      {
+        label: "Current artifact",
+        value: "Local-first trust-kernel prototype.",
+      },
+      {
+        label: "Pressure point",
+        value: "Extending the same audit model to memory and state mutation.",
+      },
+    ],
     systemMap: [
       {
         title: "Constrain",
@@ -226,14 +269,14 @@ export const projects: Project[] = [
     ],
     sections: [
       {
-        title: "Problem framing",
+        title: "Question",
         paragraphs: [
           "The harder question for serious agent use is not raw capability. It is whether actions can be constrained, reconstructed, and verified without trusting the model on its own terms.",
           "Sentinel OS is an attempt to answer that question at the systems layer instead of treating it as a logging or prompting problem.",
         ],
       },
       {
-        title: "Design choices",
+        title: "Approach",
         bullets: [
           "Use append-only execution history instead of scattered logs.",
           "Bias policy evaluation toward explicit permission rather than best effort.",
@@ -251,8 +294,8 @@ export const projects: Project[] = [
       },
     ],
     notes: [
-      "The current public milestone centers on signed policy decisions and append-only verification.",
-      "The next useful step is better replay and richer tooling around policy and state transitions.",
+      "The current public milestone covers signed policy decisions, append-only records, and basic verification.",
+      "The next useful step is replay, richer inspection tooling, and a clearer model for state and memory transitions.",
     ],
   },
   {
@@ -287,6 +330,24 @@ export const projects: Project[] = [
       signal:
         "The value is not prediction theatre. It is making evidence easier to inspect and reason about.",
     },
+    facts: [
+      {
+        label: "Primary object",
+        value: "A diligence trace built from evidence, inconsistencies, and open questions.",
+      },
+      {
+        label: "System boundary",
+        value: "Retrieval, normalization, and risk surfacing across fragmented records.",
+      },
+      {
+        label: "Current artifact",
+        value: "Narrow property-diligence prototype.",
+      },
+      {
+        label: "Pressure point",
+        value: "Representing uncertainty without hiding the underlying evidence.",
+      },
+    ],
     systemMap: [
       {
         title: "Gather",
@@ -328,14 +389,14 @@ export const projects: Project[] = [
     ],
     sections: [
       {
-        title: "Problem framing",
+        title: "Question",
         paragraphs: [
           "Important property decisions often break down at the interpretation layer. The underlying information exists, but it is fragmented, inconsistent, and expensive to reason through under time pressure.",
           "PropOps is an attempt to reduce that interpretive burden without pretending the final answer can be automated away.",
         ],
       },
       {
-        title: "Design choices",
+        title: "Approach",
         bullets: [
           "Cross-reference registry, compliance, and legal signals across multiple sources.",
           "Surface missing information, inconsistencies, and open diligence questions explicitly.",
@@ -352,8 +413,8 @@ export const projects: Project[] = [
       },
     ],
     notes: [
-      "The current prototype is intentionally narrow and focused on diligence rather than workflow breadth.",
-      "The hard part is evidence normalization and uncertainty handling, not generating polished summaries.",
+      "The current prototype is intentionally narrow: diligence before transaction commitment, not end-to-end transaction workflow.",
+      "Most of the difficulty is in evidence normalization, source traceability, and uncertainty handling rather than summary generation.",
     ],
   },
 ];
