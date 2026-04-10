@@ -12,6 +12,7 @@ export type ProjectLink = {
 
 export type Project = {
   slug: string;
+  group: "personal" | "professional";
   title: string;
   kind: string;
   summary: string;
@@ -29,6 +30,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "smriti",
+    group: "personal",
     title: "Smriti",
     kind: "Reasoning infrastructure",
     summary:
@@ -87,6 +89,7 @@ export const projects: Project[] = [
   },
   {
     slug: "sentinel-os",
+    group: "personal",
     title: "Sentinel OS",
     kind: "Trust kernel for agents",
     summary:
@@ -139,6 +142,7 @@ export const projects: Project[] = [
   },
   {
     slug: "propops",
+    group: "personal",
     title: "PropOps",
     kind: "Decision support system",
     summary:
@@ -190,6 +194,7 @@ export const projects: Project[] = [
   },
   {
     slug: "production-ai-systems",
+    group: "professional",
     title: "Production AI Systems for Mobility",
     kind: "Selected systems work",
     summary:
@@ -198,7 +203,7 @@ export const projects: Project[] = [
     status: "Ongoing",
     year: "2019 - Present",
     updatedAt: "2026-04-10",
-    featured: true,
+    featured: false,
     tags: [
       "production ML",
       "perception systems",
@@ -236,6 +241,7 @@ export const projects: Project[] = [
   },
   {
     slug: "mlops-engineering-101",
+    group: "personal",
     title: "MLOps Engineering 101",
     kind: "Learning systems",
     summary:
@@ -277,6 +283,12 @@ export const projects: Project[] = [
     notes: [],
   },
 ];
+
+export const personalProjects = projects.filter((project) => project.group === "personal");
+
+export const professionalProjects = projects.filter(
+  (project) => project.group === "professional",
+);
 
 export function getProjectBySlug(slug: string) {
   return projects.find((project) => project.slug === slug);

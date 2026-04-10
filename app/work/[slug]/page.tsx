@@ -40,6 +40,10 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
     notFound();
   }
 
+  const backHref = project.group === "professional" ? "/work#professional-work" : "/work";
+  const backLabel =
+    project.group === "professional" ? "Back to professional work" : "Back to projects";
+
   return (
     <>
       <section className="detail-hero">
@@ -51,8 +55,8 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
         <h1 className="detail-hero__title">{project.title}</h1>
         <p className="detail-hero__summary">{project.summary}</p>
         <div className="detail-links">
-          <Link className="ghost-button" href="/work">
-            Back to work
+          <Link className="ghost-button" href={backHref}>
+            {backLabel}
           </Link>
           {project.links.map((link) => (
             <a

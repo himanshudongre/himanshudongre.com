@@ -8,10 +8,10 @@ import { SocialIconLinks } from "@/components/social-icon-links";
 import { UpdateCard } from "@/components/update-card";
 import { experience } from "@/content/experience";
 import { profile, principles, researchInterests } from "@/content/profile";
-import { projects } from "@/content/projects";
+import { personalProjects } from "@/content/projects";
 import { updates } from "@/content/updates";
 
-const featuredProjects = projects.filter((project) => project.featured);
+const featuredProjects = personalProjects.filter((project) => project.featured);
 const featuredUpdates = updates.slice(0, 4);
 
 export default function Home() {
@@ -23,17 +23,21 @@ export default function Home() {
             <span className="eyebrow">Himanshu Dongre</span>
             <span className="hero__location">{profile.location}</span>
           </div>
-          <h1 className="hero__title">{profile.headline}</h1>
-          <p className="hero__lede">{profile.subheadline}</p>
-          <div className="hero__portrait-inline">
-            <div className="hero__portrait-inline-frame">
-              <Image
-                alt={profile.portrait.alt}
-                className="hero__portrait"
-                height={1600}
-                src={profile.portrait.src}
-                width={1200}
-              />
+          <div className="hero__intro">
+            <div className="hero__intro-copy">
+              <h1 className="hero__title">{profile.headline}</h1>
+              <p className="hero__lede">{profile.subheadline}</p>
+            </div>
+            <div className="hero__portrait-inline">
+              <div className="hero__portrait-inline-frame">
+                <Image
+                  alt={profile.portrait.alt}
+                  className="hero__portrait"
+                  height={1600}
+                  src={profile.portrait.src}
+                  width={1200}
+                />
+              </div>
             </div>
           </div>
 
