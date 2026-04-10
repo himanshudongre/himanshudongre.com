@@ -75,8 +75,62 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
       <section className="section">
         <div className="detail-layout">
           <div className="detail-content">
+            {project.snapshot ? (
+              <Reveal className="detail-section" delay={0}>
+                <div className="page-kicker">
+                  <span>Case study snapshot</span>
+                </div>
+                <div className="detail-snapshot-grid">
+                  <article className="detail-mini-card">
+                    <span>Challenge</span>
+                    <p>{project.snapshot.challenge}</p>
+                  </article>
+                  <article className="detail-mini-card">
+                    <span>Build</span>
+                    <p>{project.snapshot.build}</p>
+                  </article>
+                  <article className="detail-mini-card">
+                    <span>Signal</span>
+                    <p>{project.snapshot.signal}</p>
+                  </article>
+                </div>
+              </Reveal>
+            ) : null}
+
+            {project.systemMap?.length ? (
+              <Reveal className="detail-section" delay={45}>
+                <h2>System map</h2>
+                <div className="detail-system-grid">
+                  {project.systemMap.map((block) => (
+                    <article key={block.title} className="detail-system-block">
+                      <strong>{block.title}</strong>
+                      <p>{block.description}</p>
+                    </article>
+                  ))}
+                </div>
+              </Reveal>
+            ) : null}
+
+            {project.keyIdeas?.length ? (
+              <Reveal className="detail-section" delay={90}>
+                <h2>Key ideas</h2>
+                <div className="detail-idea-grid">
+                  {project.keyIdeas.map((idea) => (
+                    <article key={idea.title} className="detail-idea-card">
+                      <strong>{idea.title}</strong>
+                      <p>{idea.description}</p>
+                    </article>
+                  ))}
+                </div>
+              </Reveal>
+            ) : null}
+
             {project.sections.map((section, index) => (
-              <Reveal key={section.title} className="detail-section" delay={index * 60}>
+              <Reveal
+                key={section.title}
+                className="detail-section"
+                delay={140 + index * 60}
+              >
                 <h2>{section.title}</h2>
                 <div className="detail-copy">
                   {section.paragraphs?.map((paragraph) => (

@@ -28,6 +28,7 @@ const mono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://himanshudongre.com"),
+  applicationName: "Himanshu Dongre",
   title: {
     default: "Himanshu Dongre",
     template: "%s | Himanshu Dongre",
@@ -39,18 +40,29 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Himanshu Dongre",
-    description:
-      "Trying to understand intelligence by building it.",
+    description: "Trying to understand intelligence by building it.",
     url: "https://himanshudongre.com",
     siteName: "Himanshu Dongre",
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Himanshu Dongre",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Himanshu Dongre",
-    description:
-      "Trying to understand intelligence by building it.",
+    description: "Trying to understand intelligence by building it.",
+    images: ["/twitter-image"],
+  },
+  icons: {
+    icon: "/icon.svg",
+    apple: "/apple-icon",
   },
 };
 

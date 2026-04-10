@@ -8,10 +8,11 @@ import { SocialIconLinks } from "@/components/social-icon-links";
 import { UpdateCard } from "@/components/update-card";
 import { experience } from "@/content/experience";
 import { profile, principles, researchInterests } from "@/content/profile";
-import { personalProjects } from "@/content/projects";
+import { personalProjects, professionalProjects } from "@/content/projects";
 import { updates } from "@/content/updates";
 
 const featuredProjects = personalProjects.filter((project) => project.featured);
+const professionalTeaser = professionalProjects[0];
 const featuredUpdates = updates.slice(0, 4);
 
 export default function Home() {
@@ -89,6 +90,43 @@ export default function Home() {
           </div>
         </Reveal>
       </section>
+
+      {professionalTeaser ? (
+        <section className="section">
+          <div className="home-signal-grid">
+            <SectionHeading
+              description="A confidentiality-safe look at the production AI systems work that shaped how I think about constraints, interfaces, and delivery."
+              eyebrow="Professional"
+              title="Selected professional systems work."
+            />
+            <Reveal className="professional-teaser" delay={90}>
+              <div className="page-kicker">
+                <span>{professionalTeaser.kind}</span>
+                <span>{professionalTeaser.year}</span>
+                <span>{professionalTeaser.status}</span>
+              </div>
+              <h3>{professionalTeaser.title}</h3>
+              <p>{professionalTeaser.summary}</p>
+              <ul className="professional-teaser__list">
+                {professionalTeaser.keyIdeas?.slice(0, 3).map((idea) => (
+                  <li key={idea.title}>
+                    <strong>{idea.title}</strong>
+                    <span>{idea.description}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="professional-teaser__links">
+                <Link className="text-link" href="/work#professional-work">
+                  View professional work
+                </Link>
+                <Link className="text-link" href={`/work/${professionalTeaser.slug}`}>
+                  Open case study
+                </Link>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+      ) : null}
 
       <section className="section">
         <SectionHeading

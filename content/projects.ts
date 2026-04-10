@@ -10,6 +10,22 @@ export type ProjectLink = {
   external?: boolean;
 };
 
+export type ProjectSnapshot = {
+  challenge: string;
+  build: string;
+  signal: string;
+};
+
+export type ProjectSystemBlock = {
+  title: string;
+  description: string;
+};
+
+export type ProjectIdea = {
+  title: string;
+  description: string;
+};
+
 export type Project = {
   slug: string;
   group: "personal" | "professional";
@@ -23,6 +39,9 @@ export type Project = {
   featured: boolean;
   tags: string[];
   links: ProjectLink[];
+  snapshot?: ProjectSnapshot;
+  systemMap?: ProjectSystemBlock[];
+  keyIdeas?: ProjectIdea[];
   sections: ProjectSection[];
   notes: string[];
 };
@@ -56,6 +75,53 @@ export const projects: Project[] = [
         label: "Demo",
         href: "https://www.loom.com/share/0531ab1b6f114ceb9996ec5780052158",
         external: true,
+      },
+    ],
+    snapshot: {
+      challenge:
+        "Long-running reasoning work becomes fragile when state lives only inside chat history.",
+      build:
+        "A system for checkpoints, branching, and clean restoration of reasoning state across tools and model switches.",
+      signal:
+        "Treats reasoning state as first-class infrastructure rather than as a prompt artifact.",
+    },
+    systemMap: [
+      {
+        title: "Capture",
+        description:
+          "Freeze decisions, assumptions, open questions, and artifacts into an explicit checkpoint.",
+      },
+      {
+        title: "Branch",
+        description:
+          "Fork from a clean checkpoint to compare alternatives without contaminating the base line of thought.",
+      },
+      {
+        title: "Restore",
+        description:
+          "Re-enter a prior reasoning state without dragging in later turns that do not belong there.",
+      },
+      {
+        title: "Compare",
+        description:
+          "Make divergent reasoning paths inspectable so the workflow stays model-agnostic and legible.",
+      },
+    ],
+    keyIdeas: [
+      {
+        title: "State over transcript",
+        description:
+          "The important unit is not the chat log. It is the reasoning state you want to preserve and recover.",
+      },
+      {
+        title: "Model switches should be cheap",
+        description:
+          "Changing tools or models should not mean reconstructing your own context from scratch.",
+      },
+      {
+        title: "Branches clarify thought",
+        description:
+          "Competing lines of reasoning become more useful when they are explicit objects you can revisit.",
       },
     ],
     sections: [
@@ -112,6 +178,53 @@ export const projects: Project[] = [
         external: true,
       },
     ],
+    snapshot: {
+      challenge:
+        "Serious agents need enforceable boundaries and a trustworthy record of what they actually did.",
+      build:
+        "A local-first trust kernel with policy checks, append-only execution history, and verifiable outcomes.",
+      signal:
+        "Pushes agent safety away from vague logging and toward systems-level integrity guarantees.",
+    },
+    systemMap: [
+      {
+        title: "Constrain",
+        description:
+          "Policies are evaluated before actions run, with a bias toward explicit permission rather than best effort.",
+      },
+      {
+        title: "Record",
+        description:
+          "Execution history is captured as an append-only sequence of transitions instead of scattered logs.",
+      },
+      {
+        title: "Verify",
+        description:
+          "Outcomes are packaged so that integrity can be checked offline without trusting the running agent.",
+      },
+      {
+        title: "Extend",
+        description:
+          "The structure is designed to grow toward auditable memory and tighter control planes for agents.",
+      },
+    ],
+    keyIdeas: [
+      {
+        title: "Trust must be reconstructable",
+        description:
+          "If a system cannot show what happened after the fact, it is not trustworthy enough for serious use.",
+      },
+      {
+        title: "Policies should be visible",
+        description:
+          "Constraint systems matter more when humans can understand the rules that governed an action.",
+      },
+      {
+        title: "Integrity is infrastructure",
+        description:
+          "Verification belongs in the system design, not as an afterthought once the demo already works.",
+      },
+    ],
     sections: [
       {
         title: "Why it exists",
@@ -165,6 +278,53 @@ export const projects: Project[] = [
         external: true,
       },
     ],
+    snapshot: {
+      challenge:
+        "Important real-estate decisions are slowed down by fragmented records and hard-to-interpret legal signals.",
+      build:
+        "An AI-assisted diligence workflow that gathers, cross-checks, and summarizes risk-relevant property signals.",
+      signal:
+        "Uses AI to reduce ambiguity around consequential decisions rather than to pretend certainty.",
+    },
+    systemMap: [
+      {
+        title: "Gather",
+        description:
+          "Pull registry, legal, and compliance context from multiple fragmented sources into one workflow.",
+      },
+      {
+        title: "Normalize",
+        description:
+          "Convert scattered formats and inconsistent records into a shape that supports reasoning instead of manual hunting.",
+      },
+      {
+        title: "Surface risk",
+        description:
+          "Highlight missing information, inconsistencies, and open diligence questions that deserve attention.",
+      },
+      {
+        title: "Support judgment",
+        description:
+          "Keep the human decision-maker in control while making interpretation faster and more legible.",
+      },
+    ],
+    keyIdeas: [
+      {
+        title: "Interpretation is the bottleneck",
+        description:
+          "The hard part is often not access to data. It is turning scattered evidence into a usable picture.",
+      },
+      {
+        title: "AI should reduce ambiguity",
+        description:
+          "The system is more useful when it clarifies uncertainty than when it performs confidence theatre.",
+      },
+      {
+        title: "Practical problems matter",
+        description:
+          "Some of the most interesting systems work lives in mundane decisions with real consequences.",
+      },
+    ],
     sections: [
       {
         title: "Why it exists",
@@ -211,6 +371,53 @@ export const projects: Project[] = [
       "technical leadership",
     ],
     links: [],
+    snapshot: {
+      challenge:
+        "Production AI in mobility has to survive latency, safety, compute, and delivery constraints at the same time.",
+      build:
+        "Led and built multi-model systems spanning perception, in-cabin intelligence, optimization, and deployment.",
+      signal:
+        "This is the body of work that shaped how I think about reliability, interfaces, and systems under pressure.",
+    },
+    systemMap: [
+      {
+        title: "Sense",
+        description:
+          "Work across multi-sensor perception pipelines and model components that have to cooperate in real time.",
+      },
+      {
+        title: "Optimize",
+        description:
+          "Balance quality against latency, memory, throughput, and deployment constraints instead of treating them separately.",
+      },
+      {
+        title: "Ship",
+        description:
+          "Build systems that can actually be tested, reviewed, integrated, and maintained across long program timelines.",
+      },
+      {
+        title: "Lead",
+        description:
+          "Stay close enough to the work to guide architecture and delivery without losing implementation reality.",
+      },
+    ],
+    keyIdeas: [
+      {
+        title: "Reality is the filter",
+        description:
+          "The most important technical claims are the ones that still hold after deployment constraints show up.",
+      },
+      {
+        title: "Systems shape judgment",
+        description:
+          "Years of production work build intuition about interfaces, failure modes, and what can be trusted.",
+      },
+      {
+        title: "Confidentiality changes storytelling",
+        description:
+          "The public version stays abstract, but the systems questions and engineering patterns are still worth surfacing.",
+      },
+    ],
     sections: [
       {
         title: "What this represents",
@@ -264,6 +471,14 @@ export const projects: Project[] = [
         external: true,
       },
     ],
+    snapshot: {
+      challenge:
+        "Many ML engineers learn isolated tools without building a clear systems model for production work.",
+      build:
+        "A practical curriculum that connects experiments, pipelines, infrastructure, and team-ready engineering habits.",
+      signal:
+        "A teaching artifact for turning fragmented ML knowledge into operational engineering judgment.",
+    },
     sections: [
       {
         title: "Why it exists",
