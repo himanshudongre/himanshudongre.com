@@ -22,7 +22,6 @@ export const profile = {
   metrics: [
     { value: "12+ years", label: "production AI and software systems" },
     { value: "14-20 engineers", label: "led across architecture and delivery" },
-    { value: "33 FPS", label: "full-resolution detection pipeline" },
   ],
   socialLinks: [
     {

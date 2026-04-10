@@ -526,7 +526,7 @@ html[data-theme="dark"] .site-header {
 
 .hero__metrics {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
   gap: 0.8rem;
   margin-top: 1.3rem;
 }
@@ -1435,10 +1435,6 @@ html[data-js="true"] .reveal.is-visible {
     margin-top: 1.05rem;
   }
 
-  .hero__metrics .metric:last-child {
-    grid-column: 1 / -1;
-  }
-
   .page-title,
   .detail-hero__title {
     max-width: 10.5ch;
@@ -1498,6 +1494,10 @@ html[data-js="true"] .reveal.is-visible {
   .hero__content,
   .hero__metrics {
     text-align: left;
+  }
+
+  .hero__metrics {
+    grid-template-columns: 1fr;
   }
 
   .hero__meta {
