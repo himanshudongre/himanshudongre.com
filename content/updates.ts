@@ -17,7 +17,7 @@ export const updates: UpdateEntry[] = [
     summary:
       "An early public prototype for AI-assisted property diligence, focused on making fragmented legal and registry risk easier to read.",
     links: [
-      { label: "Project page", href: "/work/propops" },
+      { label: "Notes", href: "/work/propops" },
       { label: "Repository", href: "https://github.com/himanshudongre/propops" },
     ],
   },
@@ -28,7 +28,7 @@ export const updates: UpdateEntry[] = [
     summary:
       "A reasoning-state system built around checkpoints, branching, and cleaner recovery from context drift across models and sessions.",
     links: [
-      { label: "Project page", href: "/work/smriti" },
+      { label: "Notes", href: "/work/smriti" },
       { label: "Repository", href: "https://github.com/himanshudongre/smriti" },
     ],
   },
@@ -39,7 +39,7 @@ export const updates: UpdateEntry[] = [
     summary:
       "The repository captures a clearer direction for local-first policy enforcement and verifiable agent execution.",
     links: [
-      { label: "Project page", href: "/work/sentinel-os" },
+      { label: "Notes", href: "/work/sentinel-os" },
       {
         label: "Repository",
         href: "https://github.com/himanshudongre/sentinel-os",

@@ -2,10 +2,10 @@ export const profile = {
   name: "Himanshu Dongre",
   headline: "Trying to understand intelligence by building it.",
   subheadline:
-    "AI systems engineer building production ML systems and research-driven software.",
+    "AI systems engineer working across production ML, intelligent systems, and applied research.",
   introduction: [
-    "I build production AI systems and stay close to architecture, deployment, optimization, and the engineering tradeoffs that only show up under real constraints.",
-    "Outside work, I build independent systems like Smriti, Sentinel OS, and PropOps to explore reasoning, agency, trust, and decision support in a more research-driven way.",
+    "I build production AI systems and stay close to architecture, deployment, optimization, and the tradeoffs that only show up under real constraints.",
+    "Outside work, I use small independent systems like Smriti, Sentinel OS, and PropOps to think more clearly about reasoning, agency, trust, and decision support.",
   ],
   epigraph: "Building to understand. Understanding to build.",
   email: "himanshudongre1991@gmail.com",
@@ -45,30 +45,42 @@ export const profile = {
 } as const;
 
 export const researchInterests = [
-  "Intelligent systems",
-  "Reasoning and state",
-  "Agents and tool use",
-  "Trust and verification",
-  "Representation learning",
-  "Decision support",
-  "Real-world ML deployment",
-  "Systems that remain legible under constraints",
+  {
+    title: "Reasoning and state",
+    description:
+      "How decisions, assumptions, and partial work are represented, restored, and compared across tools and models.",
+  },
+  {
+    title: "Trust and verification",
+    description:
+      "How agent systems expose policy, evidence, and execution history in ways that can actually be checked.",
+  },
+  {
+    title: "Interfaces for intelligent systems",
+    description:
+      "Where abstractions remain legible to humans instead of collapsing into opaque workflows.",
+  },
+  {
+    title: "Decision support under uncertainty",
+    description:
+      "How systems help judgment without pretending certainty where the evidence is incomplete or noisy.",
+  },
 ] as const;
 
 export const principles = [
   {
-    title: "Stay close to first principles",
+    title: "First principles",
     description:
       "The work should still make sense after you strip away tooling, hype, and surface detail.",
   },
   {
-    title: "Use implementation as a test",
+    title: "Implementation as a test",
     description:
-      "Building is part of thinking. Implementation exposes weak assumptions faster than abstract discussion does.",
+      "Building is part of thinking. Weak assumptions usually show up faster in systems than in discussion.",
   },
   {
-    title: "Prefer clarity over theatre",
+    title: "Clarity over theatre",
     description:
-      "I care more about what survives scrutiny, constraints, and deployment than what merely presents well in a demo.",
+      "I care more about what survives scrutiny, constraints, and deployment than what merely performs well in a demo.",
   },
 ] as const;

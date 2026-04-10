@@ -17,7 +17,6 @@ type EducationItem = {
   institution: string;
   degree: string;
   period: string;
-  note?: string;
 };
 
 type SkillGroup = {
@@ -82,13 +81,11 @@ export const education: EducationItem[] = [
     institution: "University of Colorado Boulder",
     degree: "M.S. Computer Science",
     period: "2024 - Present",
-    note: "GPA: 4.0",
   },
   {
     institution: "IIIT Bangalore",
     degree: "Executive PG Programme in ML & AI",
     period: "2022 - 2023",
-    note: "CGPA: 3.66 / 4.0",
   },
   {
     institution: "Nagpur University",

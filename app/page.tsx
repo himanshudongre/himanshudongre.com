@@ -12,6 +12,7 @@ import { featuredProjects } from "@/content/projects";
 import { updates } from "@/content/updates";
 
 const featuredUpdates = updates.slice(0, 3);
+const [currentExperience, ...previousExperience] = experience;
 
 export default function Home() {
   return (
@@ -91,32 +92,50 @@ export default function Home() {
 
       <section className="section">
         <SectionHeading
-          description="12+ years across production AI, perception systems, optimization, and technical leadership."
+          description="The main line of my professional work: production AI, perception systems, optimization, and technical leadership."
           eyebrow="Experience"
           title="Experience."
         />
-        <div className="timeline">
-          {experience.map((item, index) => (
-            <Reveal key={`${item.company}-${item.period.start}`} delay={index * 70}>
-              <article className="timeline__item">
-                <div className="timeline__meta">
-                  <span>{item.period.label}</span>
-                  <span>{item.location}</span>
-                </div>
-                <h3 className="timeline__title">
-                  {item.role} · {item.company}
-                </h3>
-                <p className="timeline__summary">{item.summary}</p>
-                <div className="timeline__detail">
-                  <ul>
-                    {item.highlights.slice(0, 3).map((highlight) => (
-                      <li key={highlight}>{highlight}</li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
-            </Reveal>
-          ))}
+        <div className="experience-home">
+          <Reveal delay={40}>
+            <article className="timeline__item timeline__item--featured">
+              <div className="timeline__meta">
+                <span>{currentExperience.period.label}</span>
+                <span>{currentExperience.location}</span>
+              </div>
+              <h3 className="timeline__title">
+                {currentExperience.role} · {currentExperience.company}
+              </h3>
+              <p className="timeline__summary">{currentExperience.summary}</p>
+              <div className="timeline__detail">
+                <ul>
+                  {currentExperience.highlights.map((highlight) => (
+                    <li key={highlight}>{highlight}</li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          </Reveal>
+
+          <Reveal className="experience-compact" delay={110}>
+            <h3>Earlier roles</h3>
+            <ul className="experience-compact__list">
+              {previousExperience.map((item) => (
+                <li key={`${item.company}-${item.period.start}`}>
+                  <strong>
+                    {item.role} · {item.company}
+                  </strong>
+                  <span>
+                    {item.period.label} · {item.location}
+                  </span>
+                  <p>{item.summary}</p>
+                </li>
+              ))}
+            </ul>
+            <Link className="text-link" href="/resume">
+              Full background
+            </Link>
+          </Reveal>
         </div>
       </section>
 
@@ -143,11 +162,12 @@ export default function Home() {
         />
         <div className="interest-layout">
           <Reveal className="interest-panel" delay={40}>
-            <div className="interest-list">
+            <div className="interest-stack">
               {researchInterests.map((interest) => (
-                <span key={interest} className="tag">
-                  {interest}
-                </span>
+                <article key={interest.title} className="interest-item">
+                  <strong>{interest.title}</strong>
+                  <p>{interest.description}</p>
+                </article>
               ))}
             </div>
           </Reveal>
@@ -156,7 +176,7 @@ export default function Home() {
             <p>
               I am most interested in intelligent systems when they become
               concrete: how state is represented, what can be verified, where
-              interfaces fail, and how useful behavior survives constraints.
+              interfaces fail, and how useful behavior survives real constraints.
             </p>
           </Reveal>
         </div>
@@ -166,7 +186,7 @@ export default function Home() {
         <SectionHeading
           description="A few defaults that shape how I build and evaluate systems."
           eyebrow="Approach"
-          title="How I work."
+          title="Working defaults."
         />
         <div className="philosophy-layout">
           <Reveal delay={50}>
@@ -192,9 +212,9 @@ export default function Home() {
 
       <section className="section">
         <SectionHeading
-          description="A short record of public releases, milestones, and notable changes."
+          description="A short public record of releases and meaningful project changes."
           eyebrow="Updates"
-          title="Recent updates."
+          title="Project log."
         />
         <div className="updates-grid">
           {featuredUpdates.map((update, index) => (

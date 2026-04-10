@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: "%s | Himanshu Dongre",
   },
   description:
-    "Personal website of Himanshu Dongre, an AI systems engineer building production ML systems and research-driven software.",
+    "Personal website of Himanshu Dongre, an AI systems engineer working across production ML, intelligent systems, and applied research.",
   alternates: {
     canonical: "/",
   },

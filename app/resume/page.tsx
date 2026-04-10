@@ -8,7 +8,7 @@ import { profile } from "@/content/profile";
 export const metadata: Metadata = {
   title: "Background",
   description:
-    "Experience, education, and technical range for Himanshu Dongre.",
+    "Professional history, education, and technical scope for Himanshu Dongre.",
 };
 
 export default function ResumePage() {
@@ -18,9 +18,8 @@ export default function ResumePage() {
         <span className="eyebrow">Background</span>
         <h1 className="page-title">Background.</h1>
         <p className="page-copy">
-          Professional history, education, and the technical areas I work
-          across. A downloadable CV is available when a formal document is
-          useful.
+          Professional history, education, and the technical scope of my work.
+          A downloadable CV is available when a formal document is useful.
         </p>
         <div className="resume-actions">
           <a
@@ -70,7 +69,7 @@ export default function ResumePage() {
             <SectionHeading
               description="Education and the technical areas I reach for most often."
               eyebrow="Background"
-              title="Education and capabilities."
+              title="Education and technical scope."
             />
             <Reveal className="resume-card" delay={50}>
               <h2>Education</h2>
@@ -82,19 +81,13 @@ export default function ResumePage() {
                     {item.institution}
                     <br />
                     {item.period}
-                    {item.note ? (
-                      <>
-                        <br />
-                        {item.note}
-                      </>
-                    ) : null}
                   </li>
                 ))}
               </ul>
             </Reveal>
 
             <Reveal className="resume-card" delay={115}>
-              <h2>Skills</h2>
+              <h2>Technical scope</h2>
               <div className="skill-columns">
                 {skillGroups.map((group) => (
                   <section key={group.title}>
