@@ -73,20 +73,18 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
           <div className="detail-content">
             {project.snapshot ? (
               <Reveal className="detail-section" delay={0}>
-                <div className="page-kicker">
-                  <span>Case study snapshot</span>
-                </div>
+                <h2>At a glance</h2>
                 <div className="detail-snapshot-grid">
                   <article className="detail-mini-card">
-                    <span>Challenge</span>
+                    <span>Problem</span>
                     <p>{project.snapshot.challenge}</p>
                   </article>
                   <article className="detail-mini-card">
-                    <span>Build</span>
+                    <span>Approach</span>
                     <p>{project.snapshot.build}</p>
                   </article>
                   <article className="detail-mini-card">
-                    <span>Signal</span>
+                    <span>Why it matters</span>
                     <p>{project.snapshot.signal}</p>
                   </article>
                 </div>
@@ -95,7 +93,7 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
 
             {project.systemMap?.length ? (
               <Reveal className="detail-section" delay={45}>
-                <h2>System map</h2>
+                <h2>System sketch</h2>
                 <div className="detail-system-grid">
                   {project.systemMap.map((block) => (
                     <article key={block.title} className="detail-system-block">
@@ -109,7 +107,7 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
 
             {project.keyIdeas?.length ? (
               <Reveal className="detail-section" delay={90}>
-                <h2>Key ideas</h2>
+                <h2>Design notes</h2>
                 <div className="detail-idea-grid">
                   {project.keyIdeas.map((idea) => (
                     <article key={idea.title} className="detail-idea-card">
@@ -146,7 +144,7 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
 
           <div className="detail-sidebar">
             <Reveal className="detail-sidebar__card" delay={50}>
-              <h2>Project details</h2>
+              <h2>Status</h2>
               <div className="detail-sidebar__meta">
                 <div>
                   <span>Role</span>
@@ -157,7 +155,7 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
                   <strong>{project.status}</strong>
                 </div>
                 <div>
-                  <span>Focus</span>
+                  <span>Type</span>
                   <strong>{project.kind}</strong>
                 </div>
                 <div>
@@ -168,7 +166,7 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
             </Reveal>
 
             <Reveal className="detail-sidebar__card" delay={120}>
-              <h2>Tags</h2>
+              <h2>Topics</h2>
               <div className="tag-list">
                 {project.tags.map((tag) => (
                   <span key={tag} className="inline-tag">
@@ -180,7 +178,7 @@ export default async function WorkDetailPage({ params }: WorkPageProps) {
 
             {project.notes.length ? (
               <Reveal className="detail-sidebar__card" delay={190}>
-                <h2>Notes</h2>
+                <h2>Current state</h2>
                 <ul className="detail-sidebar__list">
                   {project.notes.map((note) => (
                     <li key={note}>{note}</li>

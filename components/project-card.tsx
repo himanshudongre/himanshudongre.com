@@ -30,7 +30,7 @@ export function ProjectCard({ project, tagLimit = 4 }: ProjectCardProps) {
       </div>
       <div className="card-links">
         <Link className="text-link" href={`/work/${project.slug}`}>
-          Project page
+          Read notes
         </Link>
         {project.links[0] ? (
           <a

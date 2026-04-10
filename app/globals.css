@@ -922,11 +922,11 @@ html[data-theme="dark"] .site-header {
 }
 
 .detail-section {
-  padding: 1.1rem 1.15rem;
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--line);
-  background: linear-gradient(180deg, var(--bg-panel-strong), var(--bg-panel));
-  box-shadow: var(--shadow-soft);
+  padding: 1rem 1.05rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line-strong);
+  background: var(--bg-panel);
+  box-shadow: none;
 }
 
 .detail-copy {
@@ -956,10 +956,10 @@ html[data-theme="dark"] .site-header {
 .notes-placeholder {
   display: grid;
   gap: 0.45rem;
-  padding: 0.9rem 0.95rem;
-  border-radius: var(--radius-lg);
+  padding: 0.82rem 0.9rem;
+  border-radius: var(--radius-md);
   border: 1px solid var(--line);
-  background: var(--bg-muted);
+  background: color-mix(in srgb, var(--bg-panel) 70%, transparent);
 }
 
 .detail-mini-card span {
@@ -1001,6 +1001,11 @@ html[data-theme="dark"] .site-header {
 
 .detail-sidebar__meta strong {
   font-size: 0.98rem;
+}
+
+.detail-section h2,
+.detail-sidebar__card h2 {
+  margin-bottom: 0.75rem;
 }
 
 .resume-layout {
