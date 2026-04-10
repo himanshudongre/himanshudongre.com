@@ -8,12 +8,10 @@ import { SocialIconLinks } from "@/components/social-icon-links";
 import { UpdateCard } from "@/components/update-card";
 import { experience } from "@/content/experience";
 import { profile, principles, researchInterests } from "@/content/profile";
-import { personalProjects, professionalProjects } from "@/content/projects";
+import { featuredProjects } from "@/content/projects";
 import { updates } from "@/content/updates";
 
-const featuredProjects = personalProjects.filter((project) => project.featured);
-const professionalTeaser = professionalProjects[0];
-const featuredUpdates = updates.slice(0, 4);
+const featuredUpdates = updates.slice(0, 3);
 
 export default function Home() {
   return (
@@ -81,7 +79,7 @@ export default function Home() {
             />
           </div>
           <div className="hero__focus">
-            <h2>Currently exploring</h2>
+            <h2>Current focus</h2>
             <ul>
               {profile.currentFocus.map((item) => (
                 <li key={item}>{item}</li>
@@ -91,88 +89,9 @@ export default function Home() {
         </Reveal>
       </section>
 
-      {professionalTeaser ? (
-        <section className="section">
-          <div className="home-signal-grid">
-            <SectionHeading
-              description="A confidentiality-safe look at the production AI systems work that shaped how I think about constraints, interfaces, and delivery."
-              eyebrow="Professional"
-              title="Selected professional systems work."
-            />
-            <Reveal className="professional-teaser" delay={90}>
-              <div className="page-kicker">
-                <span>{professionalTeaser.kind}</span>
-                <span>{professionalTeaser.year}</span>
-                <span>{professionalTeaser.status}</span>
-              </div>
-              <h3>{professionalTeaser.title}</h3>
-              <p>{professionalTeaser.summary}</p>
-              <ul className="professional-teaser__list">
-                {professionalTeaser.keyIdeas?.slice(0, 3).map((idea) => (
-                  <li key={idea.title}>
-                    <strong>{idea.title}</strong>
-                    <span>{idea.description}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="professional-teaser__links">
-                <Link className="text-link" href="/work#professional-work">
-                  View professional work
-                </Link>
-                <Link className="text-link" href={`/work/${professionalTeaser.slug}`}>
-                  Open case study
-                </Link>
-              </div>
-            </Reveal>
-          </div>
-        </section>
-      ) : null}
-
       <section className="section">
         <SectionHeading
-          description="Projects that best reflect the problems, abstractions, and systems questions I keep returning to."
-          eyebrow="Projects"
-          title="Personal projects."
-        />
-        <div className="grid projects-grid">
-          {featuredProjects.map((project, index) => (
-            <Reveal key={project.slug} delay={index * 70}>
-              <ProjectCard project={project} tagLimit={3} />
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section className="section">
-        <SectionHeading
-          description="Themes that keep showing up across both the systems I build and the questions I keep thinking about."
-          eyebrow="Interests"
-          title="Research interests."
-        />
-        <div className="interest-layout">
-          <Reveal className="interest-panel" delay={40}>
-            <div className="interest-list">
-              {researchInterests.map((interest) => (
-                <span key={interest} className="tag">
-                  {interest}
-                </span>
-              ))}
-            </div>
-          </Reveal>
-
-          <Reveal className="interest-panel" delay={110}>
-            <p>
-              I am most interested in intelligent systems that remain legible
-              under real constraints, especially around reasoning, memory,
-              representation, and trust.
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="section">
-        <SectionHeading
-          description="Production AI, technical leadership, and systems built under hard constraints."
+          description="12+ years across production AI, perception systems, optimization, and technical leadership."
           eyebrow="Experience"
           title="Experience."
         />
@@ -203,9 +122,51 @@ export default function Home() {
 
       <section className="section">
         <SectionHeading
-          description="A few principles that shape how I approach both engineering work and longer-horizon research questions."
-          eyebrow="Philosophy"
-          title="Working principles."
+          description="Current independent work. I keep this list intentionally narrow."
+          eyebrow="Projects"
+          title="Personal projects."
+        />
+        <div className="grid projects-grid">
+          {featuredProjects.map((project, index) => (
+            <Reveal key={project.slug} delay={index * 70}>
+              <ProjectCard project={project} tagLimit={3} />
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <SectionHeading
+          description="Recurring questions behind both the systems I build at work and the ones I build independently."
+          eyebrow="Interests"
+          title="Questions I keep returning to."
+        />
+        <div className="interest-layout">
+          <Reveal className="interest-panel" delay={40}>
+            <div className="interest-list">
+              {researchInterests.map((interest) => (
+                <span key={interest} className="tag">
+                  {interest}
+                </span>
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal className="interest-panel" delay={110}>
+            <p>
+              I am most interested in intelligent systems when they become
+              concrete: how state is represented, what can be verified, where
+              interfaces fail, and how useful behavior survives constraints.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section">
+        <SectionHeading
+          description="A few defaults that shape how I build and evaluate systems."
+          eyebrow="Approach"
+          title="How I work."
         />
         <div className="philosophy-layout">
           <Reveal delay={50}>
@@ -221,9 +182,9 @@ export default function Home() {
           <Reveal className="philosophy-callout" delay={120}>
             <blockquote>{profile.epigraph}</blockquote>
             <p>
-              I like the loop between inquiry and implementation. Ideas become
-              more precise when they survive contact with code, interfaces,
-              data, and time.
+              I care about the loop between ideas and implementation. If an
+              idea gets weaker once it touches code, constraints, interfaces,
+              or data, it probably was not strong enough yet.
             </p>
           </Reveal>
         </div>
@@ -246,7 +207,7 @@ export default function Home() {
 
       <section className="section">
         <SectionHeading
-          description="The projects and repositories are the best place to start. The links below are the easiest way to reach me or follow current work."
+          description="The best entry points are the projects, repositories, and direct email."
           eyebrow="Links"
           title="Contact."
         />

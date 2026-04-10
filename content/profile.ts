@@ -2,10 +2,10 @@ export const profile = {
   name: "Himanshu Dongre",
   headline: "Trying to understand intelligence by building it.",
   subheadline:
-    "AI systems engineer working across production ML, intelligent systems, and applied research.",
+    "AI systems engineer building production ML systems and research-driven software.",
   introduction: [
-    "I build production AI systems, lead engineering teams, and work where model quality meets compute, latency, reliability, and deployment constraints.",
-    "I keep returning to questions about intelligence, agency, memory, and what becomes clearer once ideas are forced into working systems.",
+    "I build production AI systems and stay close to architecture, deployment, optimization, and the engineering tradeoffs that only show up under real constraints.",
+    "Outside work, I build independent systems like Smriti, Sentinel OS, and PropOps to explore reasoning, agency, trust, and decision support in a more research-driven way.",
   ],
   epigraph: "Building to understand. Understanding to build.",
   email: "himanshudongre1991@gmail.com",
@@ -15,14 +15,14 @@ export const profile = {
     alt: "Portrait of Himanshu Dongre under flowering branches.",
   },
   currentFocus: [
-    "Reasoning systems, memory, and agent workflows.",
-    "Production ML systems built for latency, reliability, and deployment constraints.",
-    "Projects where research questions become usable software.",
+    "Reasoning state, memory, and agent workflows.",
+    "Trust, policy, and verifiable execution for AI systems.",
+    "Decision-support tools that make messy evidence easier to reason about.",
   ],
   metrics: [
     { value: "12+ years", label: "production AI and software systems" },
-    { value: "15-20 people", label: "teams led across architecture and delivery" },
-    { value: "Idea to deployment", label: "from early concepts to deployed systems" },
+    { value: "14-20 engineers", label: "led across architecture and delivery" },
+    { value: "33 FPS", label: "full-resolution detection pipeline" },
   ],
   socialLinks: [
     {
@@ -46,10 +46,11 @@ export const profile = {
 
 export const researchInterests = [
   "Intelligent systems",
-  "Trustworthy agents",
-  "Memory and state",
+  "Reasoning and state",
+  "Agents and tool use",
+  "Trust and verification",
   "Representation learning",
-  "Reasoning infrastructure",
+  "Decision support",
   "Real-world ML deployment",
   "Systems that remain legible under constraints",
 ] as const;
@@ -61,13 +62,13 @@ export const principles = [
       "The work should still make sense after you strip away tooling, hype, and surface detail.",
   },
   {
-    title: "Let implementation sharpen the idea",
+    title: "Use implementation as a test",
     description:
-      "Building is part of thinking. Implementation often reveals the real question faster than abstraction does.",
+      "Building is part of thinking. Implementation exposes weak assumptions faster than abstract discussion does.",
   },
   {
-    title: "Prefer durable systems over polished demos",
+    title: "Prefer clarity over theatre",
     description:
-      "A good prototype matters, but I trust work more when it survives constraints, complexity, and repeated contact with reality.",
+      "I care more about what survives scrutiny, constraints, and deployment than what merely presents well in a demo.",
   },
 ] as const;

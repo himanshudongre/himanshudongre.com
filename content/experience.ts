@@ -35,12 +35,12 @@ export const experience: ExperienceItem[] = [
       label: "2019 - Present",
     },
     summary:
-      "Leading and building production AI systems across mobility, perception, and in-cabin intelligence while staying close to architecture, optimization, and deployment.",
+      "Led AI/ML systems work across perception, in-cabin sensing, and deployment while staying hands-on with architecture, optimization, middleware, and delivery.",
     highlights: [
-      "Led perception and in-cabin AI work across global mobility programs while staying close to implementation detail.",
-      "Managed 15-20 member teams while driving architecture, execution planning, technical reviews, and delivery.",
-      "Built multi-model, multi-sensor pipelines under hard latency, compute, throughput, and safety constraints.",
-      "Worked across deployment and optimization topics including ONNX conversion, TensorRT, quantization, distillation, and inference acceleration.",
+      "Led teams of 14-20 engineers across perception and in-cabin AI programs, covering architecture, execution planning, technical reviews, and delivery.",
+      "Built multi-model, multi-sensor systems spanning camera, LiDAR, radar, pose, gaze, and anticipation components.",
+      "Optimized and deployed models on constrained platforms using ONNX, TensorRT, quantization, distillation, graph optimization, and inference acceleration.",
+      "Designed middleware for concurrent perception workloads and tuned a custom CenterNet pipeline to 33 FPS on full-resolution input.",
     ],
   },
   {
@@ -53,7 +53,7 @@ export const experience: ExperienceItem[] = [
       label: "2017 - 2018",
     },
     summary:
-      "Built product-oriented systems across mobile ML and full-stack application development.",
+      "Built product-oriented ML and web systems before moving fully into production AI.",
     highlights: [
       "Developed a deep learning based neural style transfer system for mobile applications.",
       "Built a full-stack platform for healthcare billing workflows.",
@@ -69,7 +69,7 @@ export const experience: ExperienceItem[] = [
       label: "2014 - 2017",
     },
     summary:
-      "Worked on backend platforms, automation, and telecom systems where correctness, process, and modernization mattered.",
+      "Worked on backend and telecom platforms where automation, migration work, and production correctness mattered.",
     highlights: [
       "Built automated testing systems for telecom services.",
       "Contributed to rating, billing, and backend modernization work in production settings.",

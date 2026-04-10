@@ -33,20 +33,6 @@ export const updates: UpdateEntry[] = [
     ],
   },
   {
-    date: "2026-03-31",
-    kind: "Repository",
-    title: "MLOps Engineering 101 published.",
-    summary:
-      "A practical curriculum focused on turning ML knowledge into engineering systems teams can actually run and maintain.",
-    links: [
-      { label: "Project page", href: "/work/mlops-engineering-101" },
-      {
-        label: "Repository",
-        href: "https://github.com/himanshudongre/mlops-engineering-101",
-      },
-    ],
-  },
-  {
     date: "2026-02-22",
     kind: "Open source",
     title: "Sentinel OS public milestone.",

@@ -8,7 +8,7 @@ import { profile } from "@/content/profile";
 export const metadata: Metadata = {
   title: "Background",
   description:
-    "Experience, education, and capabilities for Himanshu Dongre.",
+    "Experience, education, and technical range for Himanshu Dongre.",
 };
 
 export default function ResumePage() {
@@ -18,8 +18,9 @@ export default function ResumePage() {
         <span className="eyebrow">Background</span>
         <h1 className="page-title">Background.</h1>
         <p className="page-copy">
-          Experience, education, and technical range. A downloadable CV is
-          available when a formal document is useful.
+          Professional history, education, and the technical areas I work
+          across. A downloadable CV is available when a formal document is
+          useful.
         </p>
         <div className="resume-actions">
           <a
@@ -40,7 +41,7 @@ export default function ResumePage() {
         <div className="resume-layout">
           <div className="grid">
             <SectionHeading
-              description="The through-line across these roles is a mix of production responsibility, system-level thinking, and staying close to the work."
+              description="Production AI, multi-sensor perception, optimization, and technical leadership across 12+ years."
               eyebrow="Experience"
               title="Professional history."
             />
@@ -67,7 +68,7 @@ export default function ResumePage() {
 
           <div className="grid">
             <SectionHeading
-              description="A compact view of education and the technical areas I reach for most often."
+              description="Education and the technical areas I reach for most often."
               eyebrow="Background"
               title="Education and capabilities."
             />

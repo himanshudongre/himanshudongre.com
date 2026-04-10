@@ -7,7 +7,7 @@ import { updates } from "@/content/updates";
 export const metadata: Metadata = {
   title: "Updates",
   description:
-    "Recent public launches, milestones, and repository updates from Himanshu Dongre.",
+    "Public releases and meaningful changes across Himanshu Dongre's current independent projects.",
 };
 
 export default function UpdatesPage() {
@@ -17,7 +17,7 @@ export default function UpdatesPage() {
         <span className="eyebrow">Updates</span>
         <h1 className="page-title">Recent updates.</h1>
         <p className="page-copy">
-          Public releases, milestones, and notable changes across projects and repositories.
+          Public releases and meaningful changes across current independent projects.
         </p>
       </section>
 

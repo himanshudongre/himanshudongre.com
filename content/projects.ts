@@ -28,7 +28,6 @@ export type ProjectIdea = {
 
 export type Project = {
   slug: string;
-  group: "personal" | "professional";
   title: string;
   kind: string;
   summary: string;
@@ -49,7 +48,6 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "smriti",
-    group: "personal",
     title: "Smriti",
     kind: "Reasoning infrastructure",
     summary:
@@ -155,7 +153,6 @@ export const projects: Project[] = [
   },
   {
     slug: "sentinel-os",
-    group: "personal",
     title: "Sentinel OS",
     kind: "Trust kernel for agents",
     summary:
@@ -255,7 +252,6 @@ export const projects: Project[] = [
   },
   {
     slug: "propops",
-    group: "personal",
     title: "PropOps",
     kind: "Decision support system",
     summary:
@@ -352,158 +348,9 @@ export const projects: Project[] = [
       "Early public prototype and an intentionally practical problem space.",
     ],
   },
-  {
-    slug: "production-ai-systems",
-    group: "professional",
-    title: "Production AI Systems for Mobility",
-    kind: "Selected systems work",
-    summary:
-      "A confidentiality-safe snapshot of the kind of real-world AI systems work I have spent years doing: perception, in-cabin intelligence, optimization, and deployment under hard constraints.",
-    role: "Technical leadership, architecture, optimization, and hands-on delivery.",
-    status: "Ongoing",
-    year: "2019 - Present",
-    updatedAt: "2026-04-10",
-    featured: false,
-    tags: [
-      "production ML",
-      "perception systems",
-      "optimization",
-      "technical leadership",
-    ],
-    links: [],
-    snapshot: {
-      challenge:
-        "Production AI in mobility has to survive latency, safety, compute, and delivery constraints at the same time.",
-      build:
-        "Led and built multi-model systems spanning perception, in-cabin intelligence, optimization, and deployment.",
-      signal:
-        "This is the body of work that shaped how I think about reliability, interfaces, and systems under pressure.",
-    },
-    systemMap: [
-      {
-        title: "Sense",
-        description:
-          "Work across multi-sensor perception pipelines and model components that have to cooperate in real time.",
-      },
-      {
-        title: "Optimize",
-        description:
-          "Balance quality against latency, memory, throughput, and deployment constraints instead of treating them separately.",
-      },
-      {
-        title: "Ship",
-        description:
-          "Build systems that can actually be tested, reviewed, integrated, and maintained across long program timelines.",
-      },
-      {
-        title: "Lead",
-        description:
-          "Stay close enough to the work to guide architecture and delivery without losing implementation reality.",
-      },
-    ],
-    keyIdeas: [
-      {
-        title: "Reality is the filter",
-        description:
-          "The most important technical claims are the ones that still hold after deployment constraints show up.",
-      },
-      {
-        title: "Systems shape judgment",
-        description:
-          "Years of production work build intuition about interfaces, failure modes, and what can be trusted.",
-      },
-      {
-        title: "Confidentiality changes storytelling",
-        description:
-          "The public version stays abstract, but the systems questions and engineering patterns are still worth surfacing.",
-      },
-    ],
-    sections: [
-      {
-        title: "What this represents",
-        paragraphs: [
-          "A large share of my career has been spent on systems that do not get the luxury of being merely interesting. They have to be performant, robust, observable, and carefully engineered around compute and safety constraints.",
-          "Publicly, I keep the description abstract enough to stay respectful of confidentiality while still showing the character of the work.",
-        ],
-      },
-      {
-        title: "Work patterns",
-        bullets: [
-          "Designing and optimizing multi-model, multi-sensor pipelines.",
-          "Balancing model quality against latency, throughput, memory, and deployment limits.",
-          "Working across architecture, execution planning, technical review, and customer-facing delivery.",
-          "Building middleware and inference systems that support multiple perception components concurrently.",
-        ],
-      },
-      {
-        title: "Why it matters to me",
-        paragraphs: [
-          "This work shaped how I think. It taught me to respect reality, to care about interfaces and constraints, and to distrust any system claim that only survives inside idealized conditions.",
-        ],
-      },
-    ],
-    notes: [
-      "Confidential program details intentionally omitted.",
-    ],
-  },
-  {
-    slug: "mlops-engineering-101",
-    group: "personal",
-    title: "MLOps Engineering 101",
-    kind: "Learning systems",
-    summary:
-      "A practical zero-to-hero curriculum for ML engineers covering end-to-end training pipelines, infrastructure, and team-ready workflows.",
-    role: "Curriculum design and repository creation.",
-    status: "Published",
-    year: "2026",
-    updatedAt: "2026-03-31",
-    featured: false,
-    tags: [
-      "mlops",
-      "curriculum",
-      "platform thinking",
-      "engineering workflows",
-    ],
-    links: [
-      {
-        label: "Repository",
-        href: "https://github.com/himanshudongre/mlops-engineering-101",
-        external: true,
-      },
-    ],
-    snapshot: {
-      challenge:
-        "Many ML engineers learn isolated tools without building a clear systems model for production work.",
-      build:
-        "A practical curriculum that connects experiments, pipelines, infrastructure, and team-ready engineering habits.",
-      signal:
-        "A teaching artifact for turning fragmented ML knowledge into operational engineering judgment.",
-    },
-    sections: [
-      {
-        title: "Why it exists",
-        paragraphs: [
-          "Strong ML engineers need more than model intuition. They also need a working mental model for pipelines, infrastructure, reproducibility, and team practices that make systems usable beyond the experiment stage.",
-        ],
-      },
-      {
-        title: "What it covers",
-        bullets: [
-          "End-to-end training pipelines and experiment tracking.",
-          "Containerized workflows and infrastructure setup.",
-          "The gap between isolated notebooks and operational ML systems.",
-        ],
-      },
-    ],
-    notes: [],
-  },
 ];
 
-export const personalProjects = projects.filter((project) => project.group === "personal");
-
-export const professionalProjects = projects.filter(
-  (project) => project.group === "professional",
-);
+export const featuredProjects = projects.filter((project) => project.featured);
 
 export function getProjectBySlug(slug: string) {
   return projects.find((project) => project.slug === slug);
