@@ -92,7 +92,7 @@ export default function Home() {
 
       <section className="section">
         <SectionHeading
-          description="The main line of my professional work."
+          description="The production systems behind the independent work."
           eyebrow="Experience"
           title="Experience."
         />
@@ -140,7 +140,7 @@ export default function Home() {
 
       <section className="section">
         <SectionHeading
-          description="Current independent work. I keep this list intentionally narrow."
+          description="Open-source systems built to test specific ideas in public."
           eyebrow="Projects"
           title="Personal projects."
         />
@@ -155,7 +155,7 @@ export default function Home() {
 
       <section className="section">
         <SectionHeading
-          description="Recurring questions behind both the systems I build at work and the ones I build independently."
+          description="Questions that connect deployed perception, agent systems, and independent research."
           eyebrow="Interests"
           title="Questions I keep returning to."
         />

@@ -19,6 +19,11 @@ type EducationItem = {
   period: string;
 };
 
+export type PatentItem = {
+  title: string;
+  filing: string;
+};
+
 type SkillGroup = {
   title: string;
   items: string[];
@@ -27,19 +32,21 @@ type SkillGroup = {
 export const experience: ExperienceItem[] = [
   {
     company: "KPIT Technologies",
-    role: "Sr. Tech Lead, AI/ML Autonomous Systems",
+    role: "Associate Technical Architect",
     location: "Bengaluru / Tokyo / Pune",
     period: {
       start: "2019-01-01",
       label: "2019 - Present",
     },
     summary:
-      "Led AI/ML systems work across perception, in-cabin sensing, and deployment while staying hands-on with architecture, optimization, middleware, and delivery.",
+      "Architects AI systems across automotive perception, in-cabin intelligence, model industrialization, and the platforms that carry them into production.",
     highlights: [
-      "Led teams of 14-20 engineers across perception and in-cabin AI programs, covering architecture, execution planning, technical reviews, and delivery.",
-      "Built multi-model, multi-sensor systems spanning camera, LiDAR, radar, pose, gaze, and anticipation components.",
-      "Optimized and deployed models on constrained platforms using ONNX, TensorRT, quantization, distillation, graph optimization, and inference acceleration.",
-      "Designed middleware for concurrent perception workloads and tuned a custom CenterNet pipeline to 33 FPS on full-resolution input.",
+      "Leads technical direction from feasibility and architecture through C++ integration, optimization, and validation on target hardware.",
+      "Defined a multi-model in-cabin system spanning whole-body pose, gaze, and temporal action and skeleton forecasting on NVIDIA Jetson.",
+      "Developed reusable deployment patterns across NVIDIA DRIVE and Jetson, Qualcomm Snapdragon Ride, Ambarella, and Renesas platforms.",
+      "Enabled deep-learning workloads on constrained automotive ECUs through runtime selection, custom operators, quantization, graph optimization, and Python-to-C++ redesign.",
+      "Built perception middleware and vehicle interfaces across camera, LiDAR, radar, traffic-light recognition, tracking, and concurrent inference.",
+      "Leads MLOps and DataOps architecture, and advises internal teams on agent use cases, evaluation, orchestration, tool integration, state and memory, and human approval.",
     ],
   },
   {
@@ -80,17 +87,24 @@ export const education: EducationItem[] = [
   {
     institution: "University of Colorado Boulder",
     degree: "M.S. Computer Science",
-    period: "2024 - Present",
+    period: "In progress · GPA 4.0",
   },
   {
     institution: "IIIT Bangalore",
     degree: "Executive PG Programme in ML & AI",
-    period: "2022 - 2023",
+    period: "",
   },
   {
     institution: "Nagpur University",
     degree: "B.E. Computer Engineering",
-    period: "2013",
+    period: "",
+  },
+] as const;
+
+export const patents: PatentItem[] = [
+  {
+    title: "Mobile Device Performance Improvement System Using Cloud Computing",
+    filing: "Indian patent application 1922/MUM/2013",
   },
 ] as const;
 
@@ -130,7 +144,9 @@ export const skillGroups: SkillGroup[] = [
       "In-cabin sensing",
       "Driver monitoring",
       "Multi-modal pipelines",
-      "Technical leadership",
+      "Agent infrastructure",
+      "Agent evaluation",
+      "Technical architecture",
     ],
   },
 ] as const;

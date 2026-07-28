@@ -11,33 +11,33 @@ export type UpdateEntry = {
 
 export const updates: UpdateEntry[] = [
   {
-    date: "2026-04-07",
-    kind: "Prototype",
-    title: "PropOps: early prototype.",
+    date: "2026-05-23",
+    kind: "Release",
+    title: "Smriti: coordination beyond handoff files.",
     summary:
-      "A narrow public prototype for property diligence, centered on gathering fragmented legal and registry signals and surfacing inconsistencies for human review.",
+      "Added active claims, stable task IDs, freshness checks, repository drift detection, worktrees, 21 MCP tools, and a local-first quickstart.",
+    links: [
+      { label: "Notes", href: "/work/smriti" },
+      { label: "Website", href: "https://smritistate.dev" },
+    ],
+  },
+  {
+    date: "2026-04-27",
+    kind: "Prototype",
+    title: "PropOps: evidence-grounded property research.",
+    summary:
+      "Expanded the public prototype across 19 workflows, state RERA and IGRS sources, eCourts, builder entity resolution, and batch evaluation.",
     links: [
       { label: "Notes", href: "/work/propops" },
       { label: "Repository", href: "https://github.com/himanshudongre/propops" },
     ],
   },
   {
-    date: "2026-04-04",
-    kind: "Release",
-    title: "Smriti: public repo and demo.",
-    summary:
-      "Checkpointing, branching, and restoration for long-running reasoning state across sessions, tools, and model switches.",
-    links: [
-      { label: "Notes", href: "/work/smriti" },
-      { label: "Repository", href: "https://github.com/himanshudongre/smriti" },
-    ],
-  },
-  {
     date: "2026-02-22",
     kind: "Milestone",
-    title: "Sentinel OS: first public milestone.",
+    title: "Sentinel OS: MCP enforcement proxy.",
     summary:
-      "A clearer public direction for local-first policy enforcement, append-only execution history, and verifiable agent behavior.",
+      "The v0.3 prototype intercepts filesystem MCP calls, applies default-deny policy, and records signed transitions for offline verification.",
     links: [
       { label: "Notes", href: "/work/sentinel-os" },
       {

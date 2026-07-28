@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Himanshu Dongre",
     short_name: "HD",
     description:
-      "Personal website of Himanshu Dongre, AI systems engineer and research-driven builder.",
+      "Himanshu Dongre: automotive perception, embedded AI, and agent infrastructure.",
     start_url: "/",
     display: "standalone",
     background_color: "#f5f1e8",

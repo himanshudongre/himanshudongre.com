@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
-import { education, experience, skillGroups } from "@/content/experience";
+import {
+  education,
+  experience,
+  patents,
+  skillGroups,
+} from "@/content/experience";
 import { profile } from "@/content/profile";
 
 const [currentExperience, ...previousExperience] = experience;
@@ -42,7 +47,7 @@ export default function ResumePage() {
         <div className="resume-layout">
           <div className="grid">
             <SectionHeading
-              description="Production AI, multi-sensor perception, optimization, and technical leadership across 12+ years."
+              description="Production software across 12+ years, including 7+ years building and deploying AI systems."
               eyebrow="Experience"
               title="Professional history."
             />
@@ -96,8 +101,25 @@ export default function ResumePage() {
                     <strong>{item.degree}</strong>
                     <br />
                     {item.institution}
+                    {item.period ? (
+                      <>
+                        <br />
+                        {item.period}
+                      </>
+                    ) : null}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+
+            <Reveal className="resume-card" delay={85}>
+              <h2>Patent</h2>
+              <ul className="education-list">
+                {patents.map((item) => (
+                  <li key={item.filing}>
+                    <strong>{item.title}</strong>
                     <br />
-                    {item.period}
+                    {item.filing}
                   </li>
                 ))}
               </ul>

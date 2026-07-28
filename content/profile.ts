@@ -1,13 +1,13 @@
 export const profile = {
   name: "Himanshu Dongre",
-  headline: "Trying to understand intelligence by building it.",
+  headline: "Applied AI systems, from perception to agent infrastructure.",
   subheadline:
-    "AI systems engineer working across production ML, intelligent systems, and applied research.",
+    "Associate Technical Architect working across automotive perception, embedded deployment, and reliable agent systems.",
   introduction: [
-    "I build production AI systems and stay close to architecture, deployment, optimization, and the tradeoffs that only emerge under real constraints.",
-    "Outside work, I use small independent systems like Smriti, Sentinel OS, and PropOps to think more clearly about reasoning, agency, trust, and decision support.",
+    "I architect production AI systems across autonomous driving, in-cabin intelligence, and constrained embedded platforms, connecting model feasibility to runtime design and target-hardware validation.",
+    "My independent work explores coordination, state, trust, and evidence-grounded decision support for agents through Smriti, Sentinel OS, and PropOps.",
   ],
-  epigraph: "Building to understand. Understanding to build.",
+  epigraph: "Ideas should survive code, data, and deployment.",
   email: "himanshudongre1991@gmail.com",
   location: "Pune, India",
   portrait: {
@@ -15,13 +15,13 @@ export const profile = {
     alt: "Portrait of Himanshu Dongre under flowering branches.",
   },
   currentFocus: [
-    "Reasoning workflows with explicit state and recoverable context.",
-    "Trust boundaries, policy, and verifiable execution for AI systems.",
-    "Decision-support tools for messy, incomplete, real-world evidence.",
+    "Multimodal perception and in-cabin intelligence under embedded constraints.",
+    "Agent coordination, state, evaluation, and human approval.",
+    "MLOps and DataOps architecture for repeatable experimentation and validation.",
   ],
   metrics: [
-    { value: "12+ years", label: "production AI and software systems" },
-    { value: "14-20 engineers", label: "led across architecture and delivery" },
+    { value: "12+ years", label: "building production software systems" },
+    { value: "7+ years", label: "building and deploying AI systems" },
   ],
   socialLinks: [
     {
@@ -45,19 +45,19 @@ export const profile = {
 
 export const researchInterests = [
   {
-    title: "Reasoning and state",
+    title: "Perception and multimodal intelligence",
     description:
-      "How decisions, assumptions, and partial work are represented, restored, and compared across tools and models.",
+      "How models combine visual, temporal, and sensor evidence while meeting the constraints of deployed systems.",
   },
   {
-    title: "Trust and verification",
+    title: "Reasoning state and coordination",
     description:
-      "How agent systems expose policy, evidence, and execution history in ways that can actually be checked.",
+      "How decisions, assumptions, and active work are represented, restored, and shared across agents.",
   },
   {
-    title: "Interfaces for intelligent systems",
+    title: "Evaluation and trust",
     description:
-      "Where abstractions remain legible to humans instead of collapsing into opaque workflows.",
+      "How agent systems expose evidence, policy, and execution history in forms people can inspect.",
   },
   {
     title: "Decision support under uncertainty",

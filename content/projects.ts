@@ -55,29 +55,29 @@ export const projects: Project[] = [
   {
     slug: "smriti",
     title: "Smriti",
-    kind: "Reasoning infrastructure",
+    kind: "Multi-agent coordination",
     summary:
-      "Checkpointed reasoning state for long-running, multi-model work.",
+      "Version control for project reasoning state across coding agents.",
     role: "Concept, architecture, and implementation.",
     status: "Active",
     year: "2026",
-    updatedAt: "2026-04-04",
+    updatedAt: "2026-05-23",
     featured: true,
     tags: [
+      "multi-agent systems",
       "reasoning state",
-      "agents",
-      "multi-model workflows",
-      "context management",
+      "coordination",
+      "MCP",
     ],
     links: [
       {
-        label: "Repository",
-        href: "https://github.com/himanshudongre/smriti",
+        label: "Website",
+        href: "https://smritistate.dev",
         external: true,
       },
       {
-        label: "Demo",
-        href: "https://www.loom.com/share/0531ab1b6f114ceb9996ec5780052158",
+        label: "GitHub",
+        href: "https://github.com/himanshudongre/smriti",
         external: true,
       },
     ],
@@ -85,33 +85,33 @@ export const projects: Project[] = [
       challenge:
         "Long-running reasoning becomes brittle when usable state only exists inside transcript text.",
       build:
-        "Checkpoint, branch, and restore reasoning state across tools and model switches.",
+        "Version, branch, compare, and restore reasoning state while agents coordinate through claims and structured tasks.",
       signal:
-        "The core object is not the chat log. It is the state you want to preserve and recover.",
+        "Agents can share current project state without treating a transcript or handoff file as the source of truth.",
     },
     facts: [
       {
         label: "Primary object",
-        value: "Checkpoints and branches for reasoning state.",
+        value: "Structured checkpoints for decisions, assumptions, tasks, and open questions.",
       },
       {
         label: "System boundary",
-        value: "Capture, restore, and compare state across tools and models.",
+        value: "CLI, 21 MCP tools, agent skill packs, and a human-facing UI.",
       },
       {
         label: "Current artifact",
-        value: "Public repository and demo.",
+        value: "Local-first SQLite workflow, with Postgres for shared team use.",
       },
       {
         label: "Pressure point",
-        value: "Checkpoint granularity versus workflow overhead.",
+        value: "Keeping shared state fresh without turning coordination into overhead.",
       },
     ],
     systemMap: [
       {
-        title: "Capture",
+        title: "Checkpoint",
         description:
-          "Freeze decisions, assumptions, open questions, and artifacts into an explicit checkpoint.",
+          "Record decisions, assumptions, tasks, open questions, and repository state as one structured snapshot.",
       },
       {
         title: "Branch",
@@ -119,63 +119,63 @@ export const projects: Project[] = [
           "Fork from a clean checkpoint to compare alternatives without contaminating the base line of thought.",
       },
       {
-        title: "Restore",
+        title: "Coordinate",
         description:
-          "Re-enter a prior reasoning state without dragging in later turns that do not belong there.",
+          "Use time-bounded claims, stable task IDs, and freshness checks so agents can see overlapping work before they collide.",
       },
       {
-        title: "Compare",
+        title: "Verify",
         description:
-          "Make divergent reasoning paths inspectable so the workflow stays model-agnostic and legible.",
+          "Compare recorded reasoning with the live Git repository and surface branch, commit, worktree, and dirty-state drift.",
       },
     ],
     keyIdeas: [
       {
-        title: "State over transcript",
+        title: "The handoff is structured state",
         description:
-          "The important unit is the reasoning state, not the transcript around it.",
+          "A current project state with stable objects carries more usable context than another handoff document.",
       },
       {
-        title: "Model switches should be cheap",
+        title: "Coordination should remain advisory",
         description:
-          "Changing tools or models should not require rebuilding context by hand.",
+          "Claims make intent visible without turning Smriti into a scheduler or lock manager.",
       },
       {
-        title: "Branches clarify thought",
+        title: "Recorded state must admit drift",
         description:
-          "Alternative lines of reasoning become more useful when they are explicit and revisitable.",
+          "A checkpoint is useful only if the system can show when the codebase has moved past it.",
       },
     ],
     sections: [
       {
         title: "Question",
         paragraphs: [
-          "I built Smriti after repeatedly hitting the same failure mode in multi-model work: the reasoning was good, but the usable state was brittle.",
-          "Once tools changed, models switched, or a thread was revisited later, too much of the structure had to be reconstructed from prose. The goal is to make that structure explicit enough to save, branch, restore, and inspect.",
+          "I built Smriti after running Claude Code and Codex on the same projects. Each agent could write code, but neither could see the other agent's decisions, assumptions, or active work.",
+          "Handoff files helped with simple continuation. They broke down when work branched, two agents started near-simultaneously, or the repository moved past the recorded state.",
         ],
       },
       {
         title: "Approach",
         bullets: [
-          "Checkpoint decisions, assumptions, open questions, and artifacts as structured state rather than as implicit chat context.",
-          "Restore a clean reasoning context without leaking in later turns that no longer belong.",
-          "Branch from a checkpoint to compare alternatives without overwriting the base line of thought.",
-          "Treat the model as a renderer of reasoning state, not the only place where that state lives.",
+          "Store decisions, assumptions, tasks, open questions, and artifacts as versioned checkpoints.",
+          "Fork, compare, and restore reasoning branches without rewriting the base state.",
+          "Expose active claims, stable task IDs, freshness checks, and repository drift through the CLI and MCP.",
+          "Keep core coordination local and deterministic; use an LLM only for optional extraction, review, and chat features.",
         ],
       },
       {
         title: "Open questions",
         bullets: [
-          "What is the right granularity for a checkpoint: message-level, task-level, or decision-level?",
-          "How should persistent memory differ from short-horizon reasoning state?",
-          "How much structure is enough before the system becomes heavier than the reasoning workflow itself?",
+          "What checkpoint granularity preserves enough context without encouraging constant bookkeeping?",
+          "Which coordination signals should remain advisory, and which need stronger enforcement?",
+          "How should reasoning state evolve when agents work across repositories and longer time horizons?",
         ],
       },
     ],
     notes: [
-      "The public repository and demo are already live.",
-      "The implementation currently centers on capture, restore, and branching across multi-model workflows.",
-      "The next real decision is how much structure a checkpoint should carry before it slows the workflow down.",
+      "The public site and repository include a guided quickstart that runs without API keys.",
+      "Smriti is dogfooded across active Claude Code and Codex projects.",
+      "The current system spans local and shared backends, 21 MCP tools, agent skill packs, repository drift checks, claims, worktrees, and a human-facing UI.",
     ],
   },
   {
@@ -206,80 +206,80 @@ export const projects: Project[] = [
       challenge:
         "Serious agents need enforceable boundaries and a trustworthy record of what they actually did.",
       build:
-        "A local-first trust kernel with policy checks, append-only history, and verifiable outcomes.",
+        "A local-first trust kernel with default-deny policy checks, signed transitions, and an MCP enforcement proxy.",
       signal:
-        "Moves agent safety away from vague logging and toward systems-level integrity guarantees.",
+        "Policy decisions and execution history can be checked without relying on the model's account of its own actions.",
     },
     facts: [
       {
         label: "Primary object",
-        value: "Signed policy decisions and append-only action records.",
+        value: "Canonical, signed transitions in an append-only hash chain.",
       },
       {
         label: "System boundary",
-        value: "Pre-action constraint checks and post-action verification.",
+        value: "Policy evaluation, MCP tool interception, proof generation, and offline verification.",
       },
       {
         label: "Current artifact",
-        value: "Local-first trust-kernel prototype.",
+        value: "v0.3 prototype with a filesystem MCP proxy and Seatbelt enforcement.",
       },
       {
         label: "Pressure point",
-        value: "Extending the same audit model to memory and state mutation.",
+        value: "Extending the audit model from tool calls to memory and state mutation.",
       },
     ],
     systemMap: [
       {
         title: "Constrain",
         description:
-          "Policies are evaluated before actions run, with a bias toward explicit permission rather than best effort.",
+          "Seatbelt evaluates transition intent before execution using a deterministic default-deny policy.",
       },
       {
         title: "Record",
         description:
-          "Execution history is captured as an append-only sequence of transitions instead of scattered logs.",
+          "Sentinel writes canonical execution digests, policy references, signatures, and hashes to an append-only ledger.",
       },
       {
         title: "Verify",
         description:
-          "Outcomes are packaged so that integrity can be checked offline without trusting the running agent.",
+          "The command-line verifier reconstructs the chain and checks integrity offline.",
       },
       {
         title: "Extend",
         description:
-          "The structure is designed to grow toward auditable memory and tighter control planes for agents.",
+          "The next system boundary is auditable memory writes, retrievals, and state replay.",
       },
     ],
     keyIdeas: [
       {
-        title: "Trust must be reconstructable",
+        title: "Execution should be reconstructable",
         description:
-          "If a system cannot show what happened after the fact, it is not trustworthy enough.",
+          "A signed transition chain gives operators evidence beyond application logs.",
       },
       {
-        title: "Policies should be visible",
+        title: "Authorization belongs outside the client",
         description:
-          "Constraint systems matter more when humans can see the rules that governed an action.",
+          "The agent can request an action, but the authoritative policy decision comes from the enforcement layer.",
       },
       {
-        title: "Integrity is infrastructure",
+        title: "Verification should be vendor-neutral",
         description:
-          "Verification belongs in the system design, not as an afterthought.",
+          "Canonicalization, hashing, and Ed25519 signatures let operators verify the record without a model provider.",
       },
     ],
     sections: [
       {
         title: "Question",
         paragraphs: [
-          "The harder question for serious agent use is not raw capability. It is whether actions can be constrained, reconstructed, and verified without trusting the model on its own terms.",
-          "Sentinel OS treats that as a systems problem rather than a logging or prompting problem.",
+          "Serious agent use requires actions that can be constrained, reconstructed, and verified without trusting the model's own account.",
+          "Sentinel OS puts that responsibility in a policy and integrity layer outside the agent.",
         ],
       },
       {
         title: "Approach",
         bullets: [
           "Use append-only execution history instead of scattered logs.",
-          "Bias policy evaluation toward explicit permission rather than best effort.",
+          "Require explicit permission through a deterministic default-deny policy.",
           "Package outcomes so they can be verified offline after execution.",
           "Treat memory and state transitions as objects that should eventually be auditable too.",
         ],
@@ -294,26 +294,26 @@ export const projects: Project[] = [
       },
     ],
     notes: [
-      "The current public milestone covers signed policy decisions, append-only records, and basic verification.",
-      "The next useful step is replay, richer inspection tooling, and a clearer model for memory and state transitions.",
+      "The v0.3 prototype intercepts filesystem MCP calls before execution and binds the policy decision into the proof chain.",
+      "The next milestone is a clearer model for replay, memory writes, and state transitions.",
     ],
   },
   {
     slug: "propops",
     title: "PropOps",
-    kind: "Decision support system",
+    kind: "Evidence-grounded agent",
     summary:
-      "A property-diligence system that gathers fragmented records, surfaces inconsistencies, and keeps judgment with the human operator.",
+      "An open-source research agent that joins government property records into an inspectable diligence workflow.",
     role: "Problem framing, systems design, and implementation.",
-    status: "Prototype",
+    status: "Public prototype",
     year: "2026",
-    updatedAt: "2026-04-07",
+    updatedAt: "2026-04-27",
     featured: true,
     tags: [
-      "decision support",
-      "retrieval",
-      "risk analysis",
-      "information synthesis",
+      "agent workflows",
+      "government data",
+      "entity resolution",
+      "human-in-the-loop",
     ],
     links: [
       {
@@ -326,100 +326,106 @@ export const projects: Project[] = [
       challenge:
         "Important property decisions are slowed down by fragmented records and hard-to-interpret legal signals.",
       build:
-        "An AI-assisted diligence workflow that gathers, cross-checks, and summarizes risk-relevant signals.",
+        "Nineteen agent workflows combine registry, RERA, and court data with entity resolution, risk checks, and batch evaluation.",
       signal:
-        "The value is not prediction theatre. It is making evidence easier to inspect.",
+        "The output keeps sources, gaps, and judgment visible instead of hiding them behind one score.",
     },
     facts: [
       {
         label: "Primary object",
-        value: "A diligence trace built from evidence, inconsistencies, and open questions.",
+        value: "An evidence-linked property or builder report with explicit risks and open questions.",
       },
       {
         label: "System boundary",
-        value: "Retrieval, normalization, and risk surfacing across fragmented records.",
+        value: "IGRS, five state RERA portals, a national aggregator, and eCourts.",
       },
       {
         label: "Current artifact",
-        value: "Narrow property-diligence prototype.",
+        value: "TypeScript and Playwright research workflows, plus a Go terminal dashboard.",
       },
       {
         label: "Pressure point",
-        value: "Representing uncertainty without hiding the underlying evidence.",
+        value: "Portal drift, incomplete disclosures, and cross-entity builder matching.",
       },
     ],
     systemMap: [
       {
         title: "Gather",
         description:
-          "Pull registry, legal, and compliance context from multiple fragmented sources into one workflow.",
+          "Collect registration prices, project records, complaints, litigation, and listing context from public sources.",
       },
       {
         title: "Normalize",
         description:
-          "Convert scattered formats and inconsistent records into a shape that supports reasoning instead of manual hunting.",
+          "Resolve builder identities across legal entities, naming variants, contact details, directors, and addresses.",
       },
       {
         title: "Surface risk",
         description:
-          "Highlight missing information, inconsistencies, and open diligence questions that deserve attention.",
+          "Flag missing records, conflicting claims, delayed projects, litigation, contract clauses, and financial stress.",
       },
       {
         title: "Support judgment",
         description:
-          "Keep the human decision-maker in control while making interpretation faster and more legible.",
+          "Preserve the source trail and reserve outreach, negotiation, legal review, and purchase decisions for the buyer.",
       },
     ],
     keyIdeas: [
       {
-        title: "Interpretation is the bottleneck",
+        title: "Entity resolution changes the answer",
         description:
-          "The hard part is often not access to data. It is turning scattered evidence into something usable.",
+          "A project-level lookup misses history when one builder operates through multiple legal entities and name variants.",
       },
       {
-        title: "AI should reduce ambiguity",
+        title: "Sources should remain inspectable",
         description:
-          "The system is more useful when it clarifies uncertainty than when it performs confidence theatre.",
+          "Every summary is more useful when a buyer can inspect the records, limitations, and unresolved gaps behind it.",
       },
       {
-        title: "Practical problems matter",
+        title: "Automation stops before the decision",
         description:
-          "Some of the most interesting systems work lives in ordinary decisions with real consequences.",
+          "The agent gathers, compares, and drafts. The human controls outreach, legal review, negotiation, and purchase.",
       },
     ],
     sections: [
       {
         title: "Question",
         paragraphs: [
-          "Property diligence often breaks down at the interpretation layer. The information exists, but it is fragmented, inconsistent, and slow to reason through under time pressure.",
-          "PropOps reduces that burden without pretending the decision itself can be automated away.",
+          "Indian property records are public, but the useful evidence sits across registration portals, state RERA systems, court databases, builder entities, and listing sites.",
+          "PropOps turns that fragmented search into a repeatable research workflow while preserving the source trail and known limitations.",
         ],
       },
       {
         title: "Approach",
         bullets: [
-          "Cross-reference registry, compliance, and legal signals across multiple sources.",
-          "Surface missing information, inconsistencies, and open diligence questions explicitly.",
-          "Use AI as a due-diligence assistant rather than as an oracle or a risk score generator.",
+          "Route a question through 19 modes covering discovery, evaluation, builder research, litigation, finance, agreement review, and post-purchase checks.",
+          "Cross-reference IGRS, state RERA portals, the MoHUA aggregator, and eCourts using dedicated scrapers and fallbacks.",
+          "Resolve related builder entities before aggregating project history, complaints, and litigation.",
+          "Run batch evaluations with parallel agents while leaving high-impact actions with the buyer.",
         ],
       },
       {
         title: "Open questions",
         bullets: [
-          "How should uncertainty be represented without overwhelming the user?",
-          "What evidence model makes manual review faster instead of simply generating another summary layer?",
-          "Where should the boundary sit between automated synthesis and explicit human judgment?",
+          "How can scraper failures and portal changes be detected before they create false confidence?",
+          "Which evidence model makes missing and contradictory records easy to review?",
+          "How far can entity resolution go before a probable match needs explicit human confirmation?",
         ],
       },
     ],
     notes: [
-      "The current prototype is intentionally narrow: diligence before commitment, not end-to-end transaction workflow.",
-      "Most of the difficulty is in normalization, source traceability, and uncertainty handling rather than summary generation.",
+      "PropOps is open source and includes one-command installers for non-technical users.",
+      "The builder pipeline combines state-specific scrapers, cross-entity matching, and national court search.",
+      "The system never contacts builders or submits applications; the buyer retains control of consequential actions.",
     ],
   },
 ];
 
-export const featuredProjects = projects.filter((project) => project.featured);
+const featuredOrder = ["smriti", "propops", "sentinel-os"];
+
+export const featuredProjects = featuredOrder
+  .map((slug) => projects.find((project) => project.slug === slug))
+  .filter((project): project is Project => Boolean(project?.featured));
 
 export function getProjectBySlug(slug: string) {
   return projects.find((project) => project.slug === slug);

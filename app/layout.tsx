@@ -34,13 +34,14 @@ export const metadata: Metadata = {
     template: "%s | Himanshu Dongre",
   },
   description:
-    "Personal website of Himanshu Dongre, an AI systems engineer working across production ML, intelligent systems, and applied research.",
+    "Himanshu Dongre is an Associate Technical Architect working across automotive perception, embedded AI deployment, and agent infrastructure.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "Himanshu Dongre",
-    description: "Trying to understand intelligence by building it.",
+    description:
+      "Applied AI systems, from perception to agent infrastructure.",
     url: "https://himanshudongre.com",
     siteName: "Himanshu Dongre",
     locale: "en_IN",
@@ -57,7 +58,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Himanshu Dongre",
-    description: "Trying to understand intelligence by building it.",
+    description:
+      "Applied AI systems, from perception to agent infrastructure.",
     images: ["/twitter-image"],
   },
   icons: {
